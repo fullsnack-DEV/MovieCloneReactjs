@@ -1,3 +1,50 @@
 .header {
-  font-size: clamp(5rem, 10vh, 8rem);
+  width: 100%;
+  padding: 2.2em;
+
+  &__container {
+    max-width: 1440px;
+    min-width: 600px;
+    padding: 0 2em;
+
+    justify-content: space-between;
+
+    &--center {
+      margin: 0 auto;
+    }
+  }
+
+  &__logo {
+    &__image {
+      width: 50px;
+      margin-right: 0.5em;
+    }
+    &__heading {
+      font-size: 2.5rem;
+      letter-spacing: 0.4rem;
+    }
+  }
+
+  &__nav {
+    margin-left: 5em;
+    &__list {
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        margin-right: 5em;
+        font-size: 1.8rem;
+        color: $white;
+        font-family: "Nunito";
+        letter-spacing: 0.2em;
+      }
+    }
+  }
+
+  &__search {
+    font-size: 1.5rem;
+    margin-top: 0.5em;
+  }
 }

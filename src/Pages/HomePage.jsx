@@ -1,10 +1,12 @@
 import React from "react";
 import { Header } from "../component/header";
+import { Banner } from "../component/banner";
 
 export const HomePage = () => {
   return (
     <>
       <Header />
+      <Banner />
     </>
   );
 };
