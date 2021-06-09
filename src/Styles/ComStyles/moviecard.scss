@@ -1,0 +1,57 @@
+.row {
+  margin-top: 4%;
+
+  &__movies {
+    display: flex;
+    align-items: center;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    padding: 20px;
+
+    &::-webkit-scrollbar {
+      padding: 5px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+
+  &__textwrapper {
+    margin-left: 25px;
+
+    h2 {
+      letter-spacing: 0.9rem;
+      text-transform: uppercase;
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      letter-spacing: 0.3rem;
+      padding: 2px;
+    }
+  }
+
+  &__imgcontainer {
+    position: relative;
+  }
+
+  &__nums {
+    font-size: 25rem;
+    position: absolute;
+    letter-spacing: -1rem;
+    color: black;
+    bottom: 25px;
+    top: 25%;
+    font-weight: bold;
+    left: 10px;
+    -webkit-text-stroke: 0.8vmin hsl(0, 0%, 900%);
+    text-shadow: 1vmin 0 4vmin;
+    transform: translate(-18%, 0);
+  }
+}
