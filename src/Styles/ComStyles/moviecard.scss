@@ -1,5 +1,5 @@
 .row {
-  margin-top: 4%;
+  margin-top: 2%;
 
   &__movies {
     display: flex;
@@ -9,9 +9,21 @@
     overflow-x: scroll;
 
     padding: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
       padding: 5px;
+      display: none;
+    }
+  }
+
+  &__imgcontainer {
+    img {
+      transition: transform 0.5s;
+    }
+    img:hover {
+      transform: scale(1.1);
     }
   }
 
@@ -19,6 +31,11 @@
     display: flex;
     align-items: center;
     padding: 5px;
+    margin-bottom: 1.5%;
+
+    &--2 {
+      margin-bottom: 0.5%;
+    }
   }
 
   &__textwrapper {
@@ -35,6 +52,14 @@
       letter-spacing: 0.3rem;
       padding: 2px;
     }
+    &--span1 {
+      color: red;
+      font-size: 1.6rem;
+    }
+    &--span2 {
+      color: rgb(25, 46, 235);
+      font-size: 1.6rem;
+    }
   }
 
   &__imgcontainer {
@@ -50,7 +75,7 @@
     top: 25%;
     font-weight: bold;
     left: 10px;
-    -webkit-text-stroke: 0.8vmin hsl(0, 0%, 900%);
+    -webkit-text-stroke: 0.8vmin hsl(0, 0%, 100%);
     text-shadow: 1vmin 0 4vmin;
     transform: translate(-18%, 0);
   }

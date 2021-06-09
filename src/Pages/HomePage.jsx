@@ -2,14 +2,21 @@ import React from "react";
 import { Header } from "../component/header";
 import { Banner } from "../component/banner";
 import { MovieCom } from "../component/moviecard";
-import { getmovies, getupcoming } from "../API/Endpoints";
+import {
+  getmovies,
+  getnowplaying,
+  getupcoming,
+  Ontheair,
+} from "../API/Endpoints";
 export const HomePage = () => {
   return (
     <>
       <Header />
       <Banner />
       <MovieCom endpoint={getmovies} title={"premiere"} top />
-      <MovieCom endpoint={getupcoming} title={"premiere"} />
+      <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
+      <MovieCom endpoint={getupcoming} title={"Popular"} />
+      <MovieCom endpoint={Ontheair} title={"Streaming On Tv"} p />
     </>
   );
 };

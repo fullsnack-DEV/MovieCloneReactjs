@@ -9,12 +9,26 @@ const API_KEYS = process.env.API_KEY;
 
 const getmovies = () =>
   Fetchapi("movie").get(
-    "/popular?api_key=6210c279cdb193474eab3c90fade739b&language=en-US&page=1"
+    `/popular?api_key=6210c279cdb193474eab3c90fade739b&language=en-US&page=1`
+  );
+
+//getpopular
+
+const getnowplaying = () =>
+  Fetchapi("movie").get(
+    `/now_playing?api_key=6210c279cdb193474eab3c90fade739b&language=en-US&page=1`
   );
 
 //getupcoming
-
 const getupcoming = () =>
-  Fetchapi("tv").get("/popular?api_key=${API_kEYS}&language=en-US&page=1");
+  Fetchapi("movie").get(
+    `/upcoming?api_key=6210c279cdb193474eab3c90fade739b&language=en-US&page=1`
+  );
 
-export { getmovies, getupcoming };
+//get on_the_air
+const Ontheair = () =>
+  Fetchapi("tv").get(
+    `/on_the_air?api_key=6210c279cdb193474eab3c90fade739b&language=en-US&page=1`
+  );
+
+export { getmovies, getnowplaying, getupcoming, Ontheair };

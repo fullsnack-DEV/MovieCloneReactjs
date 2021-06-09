@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "apisauce": "^2.1.1",
     "axios": "^0.21.1",
+    "clsx": "^1.1.1",
     "dotenv": "^10.0.0",
     "node": "^16.1.0",
     "react": "^17.0.2",
