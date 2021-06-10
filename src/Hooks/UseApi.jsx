@@ -2,9 +2,10 @@ import { useState } from "react";
 
 //building a custom Hook
 
-const useApi = (apifunc) => {
+const useApi = (apifunc, id) => {
   //state var for data
   const [data, Setdata] = useState([]);
+  const [data1, Setdata1] = useState([]);
   //state var for error
   const [error, Seterror] = useState();
   //state var for loading
@@ -18,15 +19,18 @@ const useApi = (apifunc) => {
     Setloading(true);
 
     //get the data
-    const response = await apifunc();
+    const response = await apifunc(id);
+
     //set loading false
     Setloading(false);
 
-    if (!response.ok) return Seterror(true);
+    if (!response) return Seterror(true);
+
+    console.log(`this is omg ${id}`);
 
     //if everything is good then we can Set the data
 
-    Setdata(response.data.results);
+    Setdata(response.data.results || response.data);
   };
 
   return { error, data, loading, request };

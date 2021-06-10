@@ -31,4 +31,12 @@ const Ontheair = () =>
     `/on_the_air?api_key=6210c279cdb193474eab3c90fade739b&language=en-US&page=1`
   );
 
-export { getmovies, getnowplaying, getupcoming, Ontheair };
+//to get the movie information
+const getdetail = (id) => {
+  console.log(`this is IDD ${id}`);
+  return Fetchapi("movie").get(
+    `${id}?api_key=6210c279cdb193474eab3c90fade739b&language=en-US`
+  );
+};
+
+export { getmovies, getnowplaying, getupcoming, Ontheair, getdetail };

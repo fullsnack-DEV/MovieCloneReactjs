@@ -3,13 +3,25 @@ import useApi from "../Hooks/UseApi";
 import { getmovies } from "../API/Endpoints";
 import Playbtn from "../Assets/Image/play.png";
 import Play from "../Assets/Image/play-button.png";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import Lottie from "react-lottie";
+import animation from "../lottie.json";
 import clsx from "clsx";
 
 //shufflimg the array of the movies so that it don't repeat
 
 export const MovieCom = ({ endpoint, title, top, p }) => {
   const history = useHistory();
+
+  //lottie animation
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   const {
     error,
@@ -37,74 +49,81 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
 
   return (
     <>
-      <div className="row">
-        <div className="row__title">
-          {top ? (
-            <img
-              style={{ width: "50px", marginLeft: "85px" }}
-              src={Playbtn}
-              alt=""
-            />
-          ) : (
-            <img
-              style={{ width: "50px", marginLeft: "85px" }}
-              src={Play}
-              alt=""
-            />
-          )}
-          <div className="row__textwrapper">
-            <h2>{title}</h2>
-            {p ? (
-              <p>
-                Grab Your
-                <span className="row__textwrapper--span1">Subscription</span>
-                now!
-              </p>
+      {loading ? (
+        <Lottie options={defaultOptions} height={200} width={200} />
+      ) : (
+        <div className="row">
+          <div className="row__title">
+            {top ? (
+              <img
+                style={{ width: "50px", marginLeft: "85px" }}
+                src={Playbtn}
+                alt=""
+              />
             ) : (
-              <p>
-                Book Your <span className="row__textwrapper--span2">Seats</span>
-                Now!
-              </p>
+              <img
+                style={{ width: "50px", marginLeft: "85px" }}
+                src={Play}
+                alt=""
+              />
             )}
+            <div className="row__textwrapper">
+              <h2>{title}</h2>
+              {p ? (
+                <p>
+                  Grab Your
+                  <span className="row__textwrapper--span1">Subscription</span>
+                  now!
+                </p>
+              ) : (
+                <p>
+                  Book Your{" "}
+                  <span className="row__textwrapper--span2">Seats</span>
+                  Now!
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="row__movies">
+            {top
+              ? movies.splice(0, 10).map((movie, i) => (
+                  <div className="row__imgcontainer">
+                    <Link to={`/detail/` + movie.id}>
+                      <img
+                        key={`movie.id.toString()`}
+                        style={{
+                          width: "200px",
+                          marginLeft: "100px",
+                          borderRadius: "10%",
+                          cursor: "pointer",
+                        }}
+                        src={getposter(movie.poster_path)}
+                        alt={movie.name}
+                        // onClick={() => history.push("./detail", movie.id)}
+                      />
+                    </Link>
+                    {top ? <h1 className="row__nums">{i + 1} </h1> : null}
+                  </div>
+                ))
+              : shuffledmovies.map((movie, i) => (
+                  <div className="row__imgcontainer">
+                    <img
+                      key={`movie.id.toString()`}
+                      style={{
+                        width: "210px",
+                        marginLeft: "50px",
+                        borderRadius: "10%",
+                        cursor: "pointer",
+                      }}
+                      src={getposter(movie.poster_path)}
+                      alt={movie.name}
+                      onClick={() => history.push("./detail")}
+                    />
+                  </div>
+                ))}
           </div>
         </div>
-        <div className="row__movies">
-          {top
-            ? movies.splice(0, 10).map((movie, i) => (
-                <div className="row__imgcontainer">
-                  <img
-                    key={`movie.id.toString()`}
-                    style={{
-                      width: "200px",
-                      marginLeft: "100px",
-                      borderRadius: "10%",
-                      cursor: "pointer",
-                    }}
-                    src={getposter(movie.poster_path)}
-                    alt={movie.name}
-                    onClick={() => history.push("./detail")}
-                  />
-                  {top ? <h1 className="row__nums">{i + 1} </h1> : null}
-                </div>
-              ))
-            : shuffledmovies.map((movie, i) => (
-                <div className="row__imgcontainer">
-                  <img
-                    key={`movie.id.toString()`}
-                    style={{
-                      width: "210px",
-                      marginLeft: "50px",
-                      borderRadius: "10%",
-                      cursor: "pointer",
-                    }}
-                    src={getposter(movie.poster_path)}
-                    alt={movie.name}
-                    onClick={() => history.push("./detail")}
-                  />
-                </div>
-              ))}
-        </div>
-      </div>
+      )}
     </>
   );
 };
