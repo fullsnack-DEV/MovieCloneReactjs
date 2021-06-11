@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import useApi from "../Hooks/UseApi";
 import { getdetail } from "../API/Endpoints";
+import { Ratingscom } from "./ratingscom";
 
 export const DetailCom = () => {
   //Querying the Data for the specific ID
@@ -31,10 +32,6 @@ export const DetailCom = () => {
     <div className="detail__container center">
       <div className="detail__content">
         <div className="detail__content__img">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
           <img
             style={{
               width: "250px",
@@ -50,6 +47,9 @@ export const DetailCom = () => {
         <div className="detail__content__description">
           <h1 className="detail__description__heading">{movie.title}</h1>
           <p>{movie.overview}</p>
+          <div className="detail__description__rating">
+            <Ratingscom stars={movie.vote_average / 2} />
+          </div>
         </div>
       </div>
     </div>
