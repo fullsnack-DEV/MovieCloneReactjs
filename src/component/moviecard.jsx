@@ -13,6 +13,10 @@ import clsx from "clsx";
 export const MovieCom = ({ endpoint, title, top, p }) => {
   const history = useHistory();
 
+  const handler = (id) => {
+    history.push(`/detail/${id}`);
+  };
+
   //lottie animation
   const defaultOptions = {
     loop: true,
@@ -88,20 +92,18 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
             {top
               ? movies.splice(0, 10).map((movie, i) => (
                   <div className="row__imgcontainer">
-                    <Link to={`/detail/` + movie.id}>
-                      <img
-                        key={`movie.id.toString()`}
-                        style={{
-                          width: "200px",
-                          marginLeft: "100px",
-                          borderRadius: "10%",
-                          cursor: "pointer",
-                        }}
-                        src={getposter(movie.poster_path)}
-                        alt={movie.name}
-                        // onClick={() => history.push("./detail", movie.id)}
-                      />
-                    </Link>
+                    <img
+                      key={`movie.id.toString()`}
+                      style={{
+                        width: "200px",
+                        marginLeft: "100px",
+                        borderRadius: "10%",
+                        cursor: "pointer",
+                      }}
+                      src={getposter(movie.poster_path)}
+                      alt={movie.name}
+                      onClick={() => handler(movie.id)}
+                    />
                     {top ? <h1 className="row__nums">{i + 1} </h1> : null}
                   </div>
                 ))
@@ -117,7 +119,7 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
                       }}
                       src={getposter(movie.poster_path)}
                       alt={movie.name}
-                      onClick={() => history.push("./detail")}
+                      onClick={() => handler(movie.id)}
                     />
                   </div>
                 ))}

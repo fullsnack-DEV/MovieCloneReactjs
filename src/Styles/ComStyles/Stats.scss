@@ -1,0 +1,44 @@
+.stats {
+  margin-left: 20em;
+  max-width: 600px;
+
+  &__title {
+    font-size: 2rem;
+    width: 120px;
+    margin-bottom: 1em;
+    border-bottom: 2px solid orangered;
+    letter-spacing: 0.3rem;
+  }
+
+  &__container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__tomato {
+    font-size: 1.8rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  &__runtime {
+    font-size: 1.8rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  &__voting {
+    font-size: 1.8rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  h2 {
+    margin-top: 0.5em;
+  }
+  span {
+    color: orangered;
+  }
+}

@@ -5,7 +5,7 @@ import { useState } from "react";
 const useApi = (apifunc, id) => {
   //state var for data
   const [data, Setdata] = useState([]);
-  const [data1, Setdata1] = useState([]);
+
   //state var for error
   const [error, Seterror] = useState();
   //state var for loading

@@ -13,9 +13,9 @@ export const HomePage = () => {
     <>
       <Header />
       <Banner />
-      <MovieCom endpoint={getmovies} title={"premiere"} top />
+      <MovieCom endpoint={getmovies} title={"Opening this Week"} top />
       <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
-      <MovieCom endpoint={getupcoming} title={"Popular"} />
+      <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
       <MovieCom endpoint={Ontheair} title={"Streaming On Tv"} p />
     </>
   );
