@@ -7,7 +7,7 @@ export const Stats = ({ votes, time }) => {
   const convert = (n) => {
     const hours = Math.floor(n / 60);
     const min = n % 60;
-    return `${hours}hr:${min}minutes`;
+    return `${hours}hr : ${min}minutes`;
   };
 
   return (

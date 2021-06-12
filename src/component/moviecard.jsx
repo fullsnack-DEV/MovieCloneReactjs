@@ -27,6 +27,8 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
     },
   };
 
+  //using the custome Hook
+
   const {
     error,
     loading,

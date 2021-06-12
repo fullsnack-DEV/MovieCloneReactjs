@@ -5,6 +5,7 @@ import useApi from "../Hooks/UseApi.jsx";
 import { getdetail } from "../API/Endpoints";
 import { useParams } from "react-router";
 import { Stats } from "../component/stats";
+import { TabsCom } from "../component/tabsCom";
 
 //code
 export const DetailPage = () => {
@@ -34,6 +35,7 @@ export const DetailPage = () => {
         title={movie.title}
       />
       <Stats votes={movie.vote_average} time={movie.runtime} />
+      <TabsCom />
       <CinemaScreen />
     </>
   );
