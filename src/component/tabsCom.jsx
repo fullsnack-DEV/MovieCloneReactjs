@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Cinema } from "./cinema";
-
+import { TabsectionOneCom } from "./tabsectiononeCom";
 export const TabsCom = () => {
   const [togle, Settogle] = useState(1);
 
-  //handler function
-
-  const tabhandle = (index) => {
+  //chandling the events on a button
+  const btnhandler = (index) => {
+    //do something ?
     Settogle(index);
   };
+  const seats = [...Array(144).keys()];
 
   return (
     <div className="tabs">
@@ -18,7 +19,7 @@ export const TabsCom = () => {
             className={togle === 1 ? "tab active" : "tab"}
             onClick={() => Settogle(1)}
           >
-            <div className="tabs__headings">Book Your Dates</div>
+            <div className="tabs__headings">Choose Session</div>
           </div>
           <div
             className={togle === 2 ? "tab active" : "tab"}
@@ -36,10 +37,37 @@ export const TabsCom = () => {
 
         <div className="tabs__content">
           <div className={togle === 1 ? "content" : "content hidden"}>
-            Content One
+            {/* //importing a Seprate Section for Content */}
+            <TabsectionOneCom />
+            <div
+              style={{
+                padding: "10px",
+                width: "200px",
+                background: "orangered",
+                fontSize: "1.5rem",
+                textAlign: "center",
+                cursor: "pointer",
+              }}
+              onClick={() => btnhandler(2)}
+            >
+              Click it to move Forward
+            </div>
           </div>
           <div className={togle === 2 ? "content" : "content hidden"}>
-            <Cinema />
+            <Cinema seats={seats} />
+            <div
+              style={{
+                padding: "10px",
+                width: "200px",
+                background: "orangered",
+                fontSize: "1.5rem",
+                textAlign: "center",
+                cursor: "pointer",
+              }}
+              onClick={() => btnhandler(3)}
+            >
+              Click it to move Forward
+            </div>
           </div>
           <div className={togle === 3 ? "content" : "content hidden"}>
             <h2>Tabs Content Three</h2>

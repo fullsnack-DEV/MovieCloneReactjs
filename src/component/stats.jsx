@@ -13,7 +13,7 @@ export const Stats = ({ votes, time }) => {
   return (
     <div className="stats">
       <div className="stats__title">
-        <h1>Stats</h1>
+        <h1>Ratings</h1>
       </div>
       <div className="stats__container">
         <div className="stats__tomato">

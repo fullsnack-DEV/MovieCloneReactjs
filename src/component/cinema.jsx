@@ -1,8 +1,7 @@
 import React from "react";
 
-export const Cinema = () => {
+export const Cinema = ({ seats }) => {
   //Creating the Dummy Seats
-  const seats = [...Array(144).keys()];
 
   return (
     <>
