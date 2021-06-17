@@ -6,7 +6,6 @@ import Play from "../Assets/Image/play-button.png";
 import { Link, useHistory } from "react-router-dom";
 import Lottie from "react-lottie";
 import animation from "../lottie.json";
-import clsx from "clsx";
 
 //shufflimg the array of the movies so that it don't repeat
 
