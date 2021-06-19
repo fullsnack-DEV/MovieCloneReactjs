@@ -27,12 +27,7 @@ export const DetailPage = () => {
   //getting the Movie Backdrop
 
   return (
-    <div
-      style={{
-        "background-color": "#130f40",
-        "background-image": "linear-gradient(315deg, #130f40 0%, #000000 74%)",
-      }}
-    >
+    <div>
       <DetailCom
         img={movie.poster_path}
         description={movie.overview}
