@@ -1,17 +1,17 @@
-import { Addtofav, Removefromfav } from "./actioncreator";
-
 //intialstate
 
 const IntialState = {
   fav: [],
 };
+console.log(IntialState);
 
 export const Favreducer = (state = IntialState, action) => {
-  if (action.type === ADDTOFAV) {
+  console.log(state);
+  if (action.type === "ADDTOFAV") {
     return {
       ...state,
       fav: [
-        ...fav,
+        ...state.fav,
         {
           title: action.payload.title,
           img: action.payload.img,
@@ -20,11 +20,7 @@ export const Favreducer = (state = IntialState, action) => {
         },
       ],
     };
-  } else if (action.type === REMOVEFROMFAV) {
-    return {
-      ...state,
-      fav: [...fav],
-      
-    };
+  } else {
+    return state;
   }
 };

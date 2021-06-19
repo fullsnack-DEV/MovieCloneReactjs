@@ -22,8 +22,6 @@ export const DetailPage = () => {
     loadmovies();
   }, []);
 
-  console.log(movie);
-
   //getting the Movie Backdrop
 
   return (
@@ -33,6 +31,7 @@ export const DetailPage = () => {
         description={movie.overview}
         ratings={movie.vote_average}
         title={movie.title}
+        id={movie.id}
       />
       <Stats votes={movie.vote_average} time={movie.runtime} />
       <TabsCom />

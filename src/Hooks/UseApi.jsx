@@ -26,8 +26,6 @@ const useApi = (apifunc, id) => {
 
     if (!response) return Seterror(true);
 
-    console.log(`this is omg ${id}`);
-
     //if everything is good then we can Set the data
 
     Setdata(response.data.results || response.data);
