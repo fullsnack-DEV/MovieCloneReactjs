@@ -7,14 +7,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { Addtofav } from "../Redux/actioncreator";
 //Adding Dispatch in on the buttons
 
-export const DetailCom = ({ img, description, ratings, title, id }) => {
-  const [name, Setname] = useState("Remind Later");
+export const DetailCom = ({
+  img,
+  description,
+  ratings,
+  title,
+  id,
+  btntitle,
+}) => {
+  const [name, Setname] = useState(btntitle);
 
   const dispatch = useDispatch();
 
   //handler
-  const dispatchhhandler = ({ title, img, description, id }) => {
-    dispatch(Addtofav(title, img, description, id));
+  const dispatchhhandler = (title, img, description, id, ratings) => {
+    dispatch(Addtofav(title, img, description, id, ratings));
     Setname("Added...");
   };
 
@@ -53,7 +60,9 @@ export const DetailCom = ({ img, description, ratings, title, id }) => {
             <a className="detail__btn">Book Now</a>
             <a
               className="detail__btn"
-              onClick={() => dispatchhhandler(title, img, description, id)}
+              onClick={() =>
+                dispatchhhandler(title, img, description, id, ratings)
+              }
             >
               {name}
             </a>

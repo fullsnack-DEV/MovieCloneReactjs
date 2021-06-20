@@ -17,6 +17,7 @@ export const Favreducer = (state = IntialState, action) => {
           img: action.payload.img,
           info: action.payload.info,
           id: action.payload.id,
+          ratings: action.payload.ratings,
         },
       ],
     };

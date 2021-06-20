@@ -1,6 +1,6 @@
 import { ADDTOFAV, REMOVEFROMFAV } from "./actiontypes";
 
-export const Addtofav = (title, img, info, id) => {
+export const Addtofav = (title, img, info, id, ratings) => {
   return {
     type: "ADDTOFAV",
     payload: {
@@ -8,6 +8,7 @@ export const Addtofav = (title, img, info, id) => {
       img: img,
       info: info,
       id: id,
+      ratings: ratings,
     },
   };
 };

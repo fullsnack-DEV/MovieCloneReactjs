@@ -1,9 +1,14 @@
 import React, { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import Play from "../Assets/Image/icons.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 export const Header = () => {
   //handler
+  const history = useHistory();
+
+  const routehandler = () => {
+    history.push("/fav");
+  };
 
   return (
     <div className="header">
@@ -24,7 +29,9 @@ export const Header = () => {
               <a href="/">TV Shows</a>
             </li>
             <li>
-              <a href="/">Fav</a>
+              <Link to="/fav">
+                <a href="/">Fav</a>
+              </Link>
             </li>
           </ul>
         </nav>

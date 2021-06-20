@@ -32,6 +32,7 @@ export const DetailPage = () => {
         ratings={movie.vote_average}
         title={movie.title}
         id={movie.id}
+        btntitle={"Remind Later"}
       />
       <Stats votes={movie.vote_average} time={movie.runtime} />
       <TabsCom />
