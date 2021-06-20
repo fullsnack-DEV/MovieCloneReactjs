@@ -1,0 +1,52 @@
+.container-bar {
+  display: flex;
+  max-width: 60vw;
+  margin: 0 auto;
+
+  gap: 3%;
+  justify-content: center;
+
+  height: 60vh;
+
+  @include media("<=phone") {
+    max-width: 100vw;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+
+    margin: 0 auto;
+  }
+}
+
+.right {
+  @include media("<=phone") {
+  }
+}
+
+.right:nth-of-type(1) {
+  margin-top: 0rem;
+}
+
+.right:nth-of-type(2) {
+  margin-top: 1rem;
+}
+.right:nth-of-type(3) {
+  margin-top: 2rem;
+}
+.right:nth-of-type(5) {
+  margin-top: 1rem;
+}
+.right:nth-of-type(6) {
+  margin-top: 2rem;
+}
+.right:nth-of-type(7) {
+  margin-top: 2rem;
+}
+
+.heading-bar {
+  font-family: "Dancing Script";
+  font-weight: 700;
+  font-size: 5rem;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}

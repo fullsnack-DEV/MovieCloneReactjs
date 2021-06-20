@@ -1,5 +1,9 @@
 .banner {
-  height: 75vh;
-  width: 95%;
-  background-color: aqua;
+  height: 70vh;
+  width: 80%;
+  margin-top: 4rem;
+
+  @include media("<=phone") {
+    width: 90%;
+  }
 }

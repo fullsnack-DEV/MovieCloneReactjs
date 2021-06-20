@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import useApi from "../Hooks/UseApi";
 import { getdetail } from "../API/Endpoints";
@@ -8,7 +8,16 @@ import { Addtofav } from "../Redux/actioncreator";
 //Adding Dispatch in on the buttons
 
 export const DetailCom = ({ img, description, ratings, title, id }) => {
+  const [name, Setname] = useState("Remind Later");
+
   const dispatch = useDispatch();
+
+  //handler
+  const dispatchhhandler = ({ title, img, description, id }) => {
+    dispatch(Addtofav(title, img, description, id));
+    Setname("Added...");
+  };
+
   const data = useSelector((state) => state.fav);
 
   console.log("this is fav data", data);
@@ -25,10 +34,10 @@ export const DetailCom = ({ img, description, ratings, title, id }) => {
           <img
             style={{
               width: "250px",
-              marginLeft: "100px",
-              borderRadius: "10%",
+              marginLeft: "180px",
+
               cursor: "pointer",
-              border: "2px solid orchid",
+              border: "2px solid #fff",
             }}
             src={getposter(img)}
             alt="poster"
@@ -44,9 +53,9 @@ export const DetailCom = ({ img, description, ratings, title, id }) => {
             <a className="detail__btn">Book Now</a>
             <a
               className="detail__btn"
-              onClick={() => dispatch(Addtofav(title, img, description, id))}
+              onClick={() => dispatchhhandler(title, img, description, id)}
             >
-              Remind Later
+              {name}
             </a>
           </div>
         </div>

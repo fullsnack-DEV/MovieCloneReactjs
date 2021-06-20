@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import useApi from "../Hooks/UseApi";
-import { getmovies } from "../API/Endpoints";
+
 import Playbtn from "../Assets/Image/play.png";
 import Play from "../Assets/Image/play-button.png";
 import { Link, useHistory } from "react-router-dom";

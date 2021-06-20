@@ -1,9 +1,10 @@
 import React from "react";
+import { Moviebars } from "./Moviebars";
 
 export const Banner = () => {
   return (
     <div className="banner center">
-      <div className="banner__content">sdc</div>
+      <Moviebars />
     </div>
   );
 };

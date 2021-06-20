@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import Play from "../Assets/Image/icons.png";
+import { Link } from "react-router-dom";
 export const Header = () => {
+  //handler
+
   return (
     <div className="header">
       <div className="header__container center flex-ai-c ">
