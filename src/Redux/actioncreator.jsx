@@ -13,13 +13,11 @@ export const Addtofav = (title, img, info, id, ratings) => {
   };
 };
 
-export const Removefromfav = (title, img, info) => {
+export const Removefromfav = (id) => {
   return {
     type: "REMOVEFROMFAV",
     payload: {
-      title: "",
-      img: "",
-      info: "",
+      id,
     },
   };
 };

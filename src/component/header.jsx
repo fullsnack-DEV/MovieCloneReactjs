@@ -2,7 +2,14 @@ import React, { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import Play from "../Assets/Image/icons.png";
 import { Link, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 export const Header = () => {
+  const favs = useSelector((state) => state.fav);
+
+  //Displaying the no of the items
+
+  const favitems = favs.length;
+
   //handler
   const history = useHistory();
 
@@ -29,9 +36,17 @@ export const Header = () => {
               <a href="/">TV Shows</a>
             </li>
             <li>
-              <Link to="/fav">
-                <a href="/">Fav</a>
-              </Link>
+              {favitems === 0 ? (
+                <Link to="/fav">
+                  <a href="/">Reminders</a>
+                  {/* <span className="header__nav-span">{favitems}</span> */}
+                </Link>
+              ) : (
+                <Link to="/fav">
+                  <a href="/">Reminders</a>
+                  <span className="header__nav-span">{favitems}</span>
+                </Link>
+              )}
             </li>
           </ul>
         </nav>

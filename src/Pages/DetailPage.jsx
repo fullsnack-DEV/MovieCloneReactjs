@@ -6,6 +6,8 @@ import { getdetail } from "../API/Endpoints";
 import { useParams } from "react-router";
 import { Stats } from "../component/stats";
 import { TabsCom } from "../component/tabsCom";
+import { useDispatch, useSelector } from "react-redux";
+import { Addtofav } from "../Redux/actioncreator";
 
 //code
 export const DetailPage = () => {

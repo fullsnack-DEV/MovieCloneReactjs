@@ -4,7 +4,7 @@ import useApi from "../Hooks/UseApi";
 import { getdetail } from "../API/Endpoints";
 import { Ratingscom } from "./ratingscom";
 import { useDispatch, useSelector } from "react-redux";
-import { Addtofav } from "../Redux/actioncreator";
+import { Addtofav, Removefromfav } from "../Redux/actioncreator";
 //Adding Dispatch in on the buttons
 
 export const DetailCom = ({
@@ -20,9 +20,13 @@ export const DetailCom = ({
   const dispatch = useDispatch();
 
   //handler
-  const dispatchhhandler = (title, img, description, id, ratings) => {
+  const Adddispatchhhandler = (title, img, description, id, ratings) => {
     dispatch(Addtofav(title, img, description, id, ratings));
     Setname("Added...");
+  };
+
+  const Removedispatchhandler = (id) => {
+    dispatch(Removefromfav(id));
   };
 
   const data = useSelector((state) => state.fav);
@@ -56,17 +60,29 @@ export const DetailCom = ({
           <div className="detail__description__rating">
             <Ratingscom stars={ratings / 2} />
           </div>
-          <div className="detail__btncontainer">
-            <a className="detail__btn">Book Now</a>
-            <a
-              className="detail__btn"
-              onClick={() =>
-                dispatchhhandler(title, img, description, id, ratings)
-              }
-            >
-              {name}
-            </a>
-          </div>
+          {name === "Remind Later" ? (
+            <div className="detail__btncontainer">
+              <a className="detail__btn">Book Now</a>
+              <a
+                className="detail__btn"
+                onClick={() =>
+                  Adddispatchhhandler(title, img, description, id, ratings)
+                }
+              >
+                {name}
+              </a>
+            </div>
+          ) : (
+            <div className="detail__btncontainer">
+              <a className="detail__btn">Book Now</a>
+              <a
+                className="detail__btn"
+                onClick={() => Removedispatchhandler(id)}
+              >
+                {name}
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </div>

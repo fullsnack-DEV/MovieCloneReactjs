@@ -21,6 +21,11 @@ export const Favreducer = (state = IntialState, action) => {
         },
       ],
     };
+  } else if (action.type === "REMOVEFROMFAV") {
+    return {
+      ...state,
+      fav: state.fav.filter((item) => item.id !== action.payload.id),
+    };
   } else {
     return state;
   }
