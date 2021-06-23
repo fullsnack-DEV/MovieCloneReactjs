@@ -1,7 +1,25 @@
 import React, { useState } from "react";
+import { useCallback } from "react";
 import { Cinema } from "./cinema";
 import { TabsectionOneCom } from "./tabsectiononeCom";
 export const TabsCom = () => {
+  const [date, Setdate] = useState();
+
+  //Handler
+
+  // const callback = (date) => {
+  //   Setdate(date);
+  // };
+
+  const callback = useCallback(
+    (date) => {
+      Setdate(date);
+    },
+    [date]
+  );
+
+  console.log(`This is the Date ${date}`);
+
   const [togle, Settogle] = useState(1);
 
   //chandling the events on a button
@@ -35,10 +53,18 @@ export const TabsCom = () => {
           </div>
         </div>
 
+        {/* 
+            
+                Tabs Content
+            
+            
+            
+        */}
+
         <div className="tabs__content">
           <div className={togle === 1 ? "content" : "content hidden"}>
             {/* //importing a Seprate Section for Content */}
-            <TabsectionOneCom />
+            <TabsectionOneCom parentCallback={callback} />
             <div
               style={{
                 padding: "10px",
@@ -47,6 +73,7 @@ export const TabsCom = () => {
                 fontSize: "1.5rem",
                 textAlign: "center",
                 cursor: "pointer",
+                display: "flex",
               }}
               onClick={() => btnhandler(2)}
             >

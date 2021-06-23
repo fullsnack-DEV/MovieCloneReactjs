@@ -2,6 +2,7 @@
 
 const IntialState = {
   fav: [],
+  dates: [],
 };
 console.log(IntialState);
 
