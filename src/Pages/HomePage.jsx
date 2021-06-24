@@ -12,7 +12,7 @@ import { useRef } from "react";
 export const HomePage = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Banner />
       <MovieCom endpoint={getmovies} title={"Opening this Week"} top />
       <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />

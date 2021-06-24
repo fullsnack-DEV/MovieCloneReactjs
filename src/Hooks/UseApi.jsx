@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React from "react";
+import { useCallback, useState } from "react";
 
 //building a custom Hook
 
@@ -13,7 +14,7 @@ const useApi = (apifunc, id) => {
 
   //fucntion that will fetch the data
 
-  const request = async () => {
+  const request = useCallback(async () => {
     //set loading to true
 
     Setloading(true);
@@ -23,13 +24,14 @@ const useApi = (apifunc, id) => {
 
     //set loading false
     Setloading(false);
+    console.log("I am from hook");
 
     if (!response) return Seterror(true);
 
     //if everything is good then we can Set the data
 
     Setdata(response.data.results || response.data);
-  };
+  }, [apifunc, id]);
 
   return { error, data, loading, request };
 };

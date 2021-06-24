@@ -6,17 +6,41 @@ import { DetailPage } from "./Pages/DetailPage";
 import { Provider } from "react-redux";
 import Store from "./Redux/store.jsx";
 import { FavPage } from "./Pages/FavPage";
+import { Mobtabs } from "./component/Mobtabs";
+import { useMedia } from "./Hooks/UseMedia.jsx";
 function App() {
+  const phone = useMedia(
+    //array of the Media Quries
+    ["(max-width: 400px)"],
+    [true],
+    false
+  );
+
   return (
-    <Provider store={Store}>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/detail/:id" component={DetailPage} />
-          <Route exact path="/fav" component={FavPage} />
-        </Switch>
-      </Router>
-    </Provider>
+    <>
+      {phone ? (
+        <Provider store={Store}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/detail/:id" component={DetailPage} />
+              <Route exact path="/fav" component={FavPage} />
+            </Switch>
+            <Mobtabs />
+          </Router>
+        </Provider>
+      ) : (
+        <Provider store={Store}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/detail/:id" component={DetailPage} />
+              <Route exact path="/fav" component={FavPage} />
+            </Switch>
+          </Router>
+        </Provider>
+      )}
+    </>
   );
 }
 

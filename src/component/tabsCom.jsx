@@ -5,18 +5,9 @@ import { TabsectionOneCom } from "./tabsectiononeCom";
 export const TabsCom = () => {
   const [date, Setdate] = useState();
 
-  //Handler
-
-  // const callback = (date) => {
-  //   Setdate(date);
-  // };
-
-  const callback = useCallback(
-    (date) => {
-      Setdate(date);
-    },
-    [date]
-  );
+  const callback = useCallback((date) => {
+    Setdate(date);
+  }, []);
 
   console.log(`This is the Date ${date}`);
 

@@ -26,7 +26,7 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
     },
   };
 
-  //using the custome Hook
+  //using the custom Hook
 
   const {
     error,
@@ -38,7 +38,8 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
   //useEffect
   useEffect(() => {
     loadmovies();
-  }, []);
+    console.log("I am Rendering from Movie Card");
+  }, [loadmovies]);
 
   //function to shuffle the movie array
 
@@ -53,24 +54,16 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
     `https://image.tmdb.org/t/p/w440_and_h660_face${path}`;
 
   return (
-    <>
+    <div className="row-container">
       {loading ? (
         <Lottie options={defaultOptions} height={200} width={200} />
       ) : (
         <div className="row">
           <div className="row__title">
             {top ? (
-              <img
-                style={{ width: "50px", marginLeft: "85px" }}
-                src={Playbtn}
-                alt=""
-              />
+              <img className="row__title__img" src={Playbtn} alt="" />
             ) : (
-              <img
-                style={{ width: "50px", marginLeft: "85px" }}
-                src={Play}
-                alt=""
-              />
+              <img className="row__title__img" src={Play} alt="" />
             )}
             <div className="row__textwrapper">
               <h2>{title}</h2>
@@ -91,43 +84,35 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
           </div>
           <div className="row__movies">
             {top
-              ? movies.splice(0, 10).map((movie, i) => (
-                  <div className="row__imgcontainer">
-                    <img
-                      key={`movie.id.toString()`}
-                      style={{
-                        width: "200px",
-                        marginLeft: "100px",
-                        borderRadius: "10%",
-                        cursor: "pointer",
-                      }}
-                      src={getposter(movie.poster_path)}
-                      alt={movie.name}
-                      onClick={() => handler(movie.id)}
-                    />
-                    {top ? <h1 className="row__nums">{i + 1} </h1> : null}
-                  </div>
-                ))
-              : shuffledmovies.map((movie, i) => (
-                  <div className="row__imgcontainer">
-                    <img
-                      key={`movie.id.toString()`}
-                      style={{
-                        width: "210px",
-                        marginLeft: "50px",
-                        borderRadius: "10%",
-                        cursor: "pointer",
-                      }}
-                      src={getposter(movie.poster_path)}
-                      alt={movie.name}
-                      onClick={() => handler(movie.id)}
-                    />
-                  </div>
-                ))}
+              ? React.Children.toArray(
+                  movies.splice(0, 10).map((movie, i) => (
+                    <div className="row__imgcontainer">
+                      <img
+                        className="row__imgcontainer__img"
+                        src={getposter(movie.poster_path)}
+                        alt={movie.name}
+                        onClick={() => handler(movie.id)}
+                      />
+                      {top ? <h1 className="row__nums">{i + 1} </h1> : null}
+                    </div>
+                  ))
+                )
+              : React.Children.toArray(
+                  shuffledmovies.map((movie, i) => (
+                    <div className="row__imgcontainer">
+                      <img
+                        className="row__imgcontainer__img--2"
+                        src={getposter(movie.poster_path)}
+                        alt={movie.name}
+                        onClick={() => handler(movie.id)}
+                      />
+                    </div>
+                  ))
+                )}
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

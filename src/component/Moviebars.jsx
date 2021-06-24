@@ -2,16 +2,26 @@ import React, { useState, useEffect } from "react";
 import { AnimateSharedLayout, motion } from "framer-motion";
 
 import useApi from "../Hooks/UseApi";
-import { Ontheair, getupcoming } from "../API/Endpoints";
+import { getupcoming } from "../API/Endpoints";
 import { useHistory } from "react-router-dom";
+
+import { useMedia } from "../Hooks/UseMedia";
+
 export const Moviebars = () => {
+  const phone = useMedia(
+    //array of the Media Quries
+    ["(max-width: 400px)"],
+    [true],
+    false
+  );
+
   const { data: bars, error, loading, request: loadbars } = useApi(getupcoming);
   const [name, Setname] = useState();
 
   useEffect(() => {
     loadbars();
     Setname("Streaming Now");
-  }, []);
+  }, [loadbars]);
 
   //routing
   const history = useHistory();
@@ -31,35 +41,65 @@ export const Moviebars = () => {
     <div>
       <AnimateSharedLayout>
         <motion.section className="container-bar">
-          {React.Children.toArray(
-            bars.slice(0, 10).map((bar, i) => {
-              return (
-                <motion.div
-                  onMouseEnter={() => Setname(bar.title)}
-                  onMouseLeave={() => Setname("Straming Now")}
-                  animate={{
-                    width: "5%",
-                  }}
-                  className="right"
-                  whileHover={{
-                    width: "25%",
+          {phone
+            ? React.Children.toArray(
+                bars.slice(0, 6).map((bar, i) => {
+                  return (
+                    <motion.div
+                      onMouseEnter={() => Setname(bar.title)}
+                      onMouseLeave={() => Setname("Straming Now")}
+                      animate={{
+                        width: "10%",
+                      }}
+                      className="right"
+                      whileTap={{
+                        width: "350%",
 
-                    transition: { duration: "0.2", ease: "easeIn" },
-                  }}
-                  style={{
-                    height: "50vh",
-                    border: "2px solid #fff",
+                        transition: { duration: "0.2", ease: "easeIn" },
+                      }}
+                      style={{
+                        height: "50vh",
+                        border: "2px solid #fff",
 
-                    backgroundPosition: "center",
-                    background: `url(${getposter(bar.poster_path)})`,
-                    overflow: "hidden",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                ></motion.div>
-              );
-            })
-          )}
+                        backgroundPosition: "center",
+                        background: `url(${getposter(bar.poster_path)})`,
+                        overflow: "hidden",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    ></motion.div>
+                  );
+                })
+              )
+            : React.Children.toArray(
+                bars.slice(0, 10).map((bar, i) => {
+                  return (
+                    <motion.div
+                      onMouseEnter={() => Setname(bar.title)}
+                      onMouseLeave={() => Setname("Straming Now")}
+                      animate={{
+                        width: "5%",
+                      }}
+                      className="right"
+                      whileHover={{
+                        width: "25%",
+
+                        transition: { duration: "0.2", ease: "easeIn" },
+                      }}
+                      style={{
+                        height: "50vh",
+                        border: "2px solid #fff",
+
+                        backgroundPosition: "center",
+                        background: `url(${getposter(bar.poster_path)})`,
+                        overflow: "hidden",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    ></motion.div>
+                  );
+                })
+              )}
         </motion.section>
         <h2 className="heading-bar">{name}</h2>
       </AnimateSharedLayout>

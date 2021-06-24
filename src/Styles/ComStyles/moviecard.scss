@@ -1,5 +1,5 @@
 .row {
-  margin-top: 2%;
+  margin-top: 4%;
 
   &__movies {
     display: flex;
@@ -36,15 +36,43 @@
     &--2 {
       margin-bottom: 0.5%;
     }
+
+    //MEdia
+
+    @include media("<=phone") {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+    }
+    &__img {
+      width: 50px;
+      margin-left: 85px;
+
+      @include media("<=phone") {
+        width: 30px;
+        margin-left: 2px;
+
+        margin: 10px 10px 10px 10px;
+      }
+    }
   }
 
   &__textwrapper {
     margin-left: 25px;
 
+    @include media("<=phone") {
+      margin-left: 10px;
+    }
+
     h2 {
       letter-spacing: 0.9rem;
       text-transform: uppercase;
       font-size: 3rem;
+
+      @include media("<=phone") {
+        letter-spacing: 0.5;
+        font-size: 2rem;
+      }
     }
 
     p {
@@ -64,6 +92,24 @@
 
   &__imgcontainer {
     position: relative;
+    scroll-snap-type: block;
+    &__img {
+      width: 200px;
+      margin-left: 100px;
+      border-radius: 10%;
+      cursor: pointer;
+
+      &--2 {
+        width: 210px;
+        margin-left: 50px;
+        border-radius: 10%;
+        cursor: pointer;
+
+        @include media("<=phone") {
+          margin-left: 30px;
+        }
+      }
+    }
   }
 
   &__nums {

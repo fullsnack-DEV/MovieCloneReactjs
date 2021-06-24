@@ -1,0 +1,38 @@
+.tabcontainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+}
+li {
+  list-style: none;
+  position: relative;
+}
+
+li > img {
+  height: 30px;
+  width: 30px;
+}
+
+ul {
+  padding: 10px;
+
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: space-around;
+  color: #fff;
+  background: #6190e8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a7bfe8,
+    #6190e8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #a7bfe8,
+    #6190e8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

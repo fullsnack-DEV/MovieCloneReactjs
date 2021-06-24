@@ -25,7 +25,7 @@ export const DetailPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0); //this is to scroll the page at the top while rendering
     loadmovies();
-  }, [pathname]);
+  }, [loadmovies]);
 
   //getting the Movie Backdrop
 
