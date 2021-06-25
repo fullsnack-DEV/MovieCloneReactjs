@@ -6,14 +6,11 @@ import { TabsectionOneCom } from "./tabsectiononeCom";
 import { useMedia } from "../Hooks/useMedia";
 export const TabsCom = () => {
   //dates to display on a last Payment Screen
-  const [date, Setdate] = useState({ date: "null", day: "null" });
+  // const [date, Setdate] = useState({ date: "null", day: "null" });
 
-  console.log(date);
+  //State to save the Selected seats
 
-  const callback = useCallback(() => {
-    //getting the dates here
-    console.log(`This is the Date ${date.date} ${date.day}`);
-  }, []);
+  // console.log(date);
 
   //this for toggling the tabs
   const [togle, Settogle] = useState(1);
@@ -34,23 +31,20 @@ export const TabsCom = () => {
         <div className="tabs__block">
           <div
             className={togle === 1 ? "tab active" : "tab"}
-            onClick={() => Settogle(1)}
+            onClick={() => btnhandler(1)}
           >
             <div className="tabs__headings">
               Choose <br /> Session
             </div>
           </div>
-          <div
-            className={togle === 2 ? "tab active" : "tab"}
-            onClick={() => Settogle(2)}
-          >
+          <div className={togle === 2 ? "tab active" : "tab"}>
             <div className="tabs__headings">
               Select <br /> Seats
             </div>
           </div>
           <div
             className={togle === 3 ? "tab active" : "tab"}
-            onClick={() => Settogle(3)}
+            onClick={togle === 1 ? null : () => btnhandler(2)}
           >
             <div className="tabs__headings">Payment</div>
           </div>
@@ -68,12 +62,13 @@ export const TabsCom = () => {
           <div className={togle === 1 ? "content" : "content hidden"}>
             {/* //importing a Seprate Section for Content */}
             <TabsectionOneCom
-              parentCallback={callback} //passing the callback to get the dated data on parent state
               onClick={() => btnhandler(2)} //passing the handler to move the screen ahead
             />
           </div>
           <div className={togle === 2 ? "content" : "content hidden"}>
+            {/* cinema */}
             {/* importing a seprate section for Cinema */}
+
             <Cinema seats={seats} />
           </div>
           <div className={togle === 3 ? "content" : "content hidden"}>

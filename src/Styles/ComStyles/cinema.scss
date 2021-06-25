@@ -16,6 +16,38 @@
     }
   }
 
+  &__info {
+    background: slategray !important;
+    padding: 5px;
+    margin: 0;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 10px;
+
+    @include media("<=phone") {
+      margin-left: 5rem;
+      margin-top: 3rem;
+    }
+    @include media("<=phonesmall-2") {
+      margin-left: 1rem;
+    }
+
+    &__selected {
+      .info {
+        background: orangered;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        border: orangered;
+      }
+    }
+  }
+
   &__Screen {
     height: 100px;
     background: rgba(196, 190, 190, 0.164);
@@ -26,6 +58,7 @@
     @include media("<=phone") {
       width: 100%;
       margin-left: 12%;
+      height: 90px;
     }
     @include media("<=phonesmall-2") {
       height: 80px;
@@ -93,6 +126,29 @@
       left: 25px;
     }
 
+    &--3 {
+      width: 20px;
+      height: 20px;
+
+      &::before {
+        right: 15px;
+      }
+      &::after {
+        left: 15px;
+      }
+      &::after,
+      &::before {
+        content: "";
+        display: block;
+        width: calc(34px / 6);
+        height: calc(34px / 3);
+        position: absolute;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #000;
+      }
+    }
+
     &:nth-of-type(12n + 2) {
       margin-right: 25px;
     }
@@ -101,6 +157,66 @@
     }
 
     @include media("<=phone") {
+    }
+
+    &--selected {
+      background: linear-gradient(#fff 80%, #fff, 0, #cc1f2f 100%);
+
+      &::after {
+        background: #626262 !important;
+      }
+      &::before {
+        background: #626262 !important;
+      }
+      &--1 {
+        width: 20px;
+        height: 20px;
+
+        &::before {
+          right: 15px;
+        }
+        &::after {
+          left: 15px;
+        }
+        &::after,
+        &::before {
+          content: "";
+          display: block;
+          width: calc(34px / 6);
+          height: calc(34px / 3);
+          position: absolute;
+          background: #fff;
+          border-radius: 4px;
+          border: 1px solid #000;
+        }
+      }
+    }
+
+    &--occupied {
+      background-color: tomato;
+
+      &--2 {
+        width: 20px;
+        height: 20px;
+
+        &::before {
+          right: 15px;
+        }
+        &::after {
+          left: 15px;
+        }
+        &::after,
+        &::before {
+          content: "";
+          display: block;
+          width: calc(34px / 6);
+          height: calc(34px / 3);
+          position: absolute;
+          background: #fff;
+          border-radius: 4px;
+          border: 1px solid #000;
+        }
+      }
     }
   }
 }
