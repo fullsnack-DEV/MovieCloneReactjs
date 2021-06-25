@@ -2,7 +2,12 @@
 
 const IntialState = {
   fav: [],
-  dates: [],
+  dates: [
+    {
+      date: null,
+      day: null,
+    },
+  ],
 };
 console.log(IntialState);
 
@@ -26,6 +31,16 @@ export const Favreducer = (state = IntialState, action) => {
     return {
       ...state,
       fav: state.fav.filter((item) => item.id !== action.payload.id),
+    };
+  } else if (action.type === "GETDATE") {
+    return {
+      ...state,
+      dates: [
+        {
+          date: action.payload.date,
+          day: action.payload.day,
+        },
+      ],
     };
   } else {
     return state;

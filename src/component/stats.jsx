@@ -17,17 +17,17 @@ export const Stats = ({ votes, time }) => {
       </div>
       <div className="stats__container">
         <div className="stats__tomato">
-          <img style={{ height: "80px", width: "80px" }} src={tomato} alt="" />
+          <img src={tomato} alt="" />
           <h2>
             <span>{votes * 10}%</span> Fresh
           </h2>
         </div>
         <div className="stats__runtime">
-          <img style={{ height: "80px", width: "80px" }} src={popcorn} alt="" />
+          <img src={popcorn} alt="" />
           <h2>{convert(time)}</h2>
         </div>
         <div className="stats__voting">
-          <img style={{ height: "80px", width: "80px" }} src={IMDB} alt="" />
+          <img src={IMDB} alt="" />
           <h2>56</h2>
         </div>
       </div>

@@ -1,9 +1,13 @@
 .tabs {
   &__container {
-    width: 1140px;
     margin-top: 5%;
     display: flex;
     flex-flow: column;
+    width: 85%;
+
+    @include media("<=phone") {
+      width: 95%;
+    }
   }
 
   &__block {
@@ -11,11 +15,20 @@
 
     align-items: center;
     justify-content: space-around;
+
+    @include media("<=phone") {
+      width: 99%;
+    }
   }
   &__headings {
     font-size: 2rem;
     font-family: "nunito";
     letter-spacing: 0.3rem;
+
+    @include media("<=phone") {
+      font-size: 1.6rem;
+      letter-spacing: 0.2rem;
+    }
   }
 
   .tab {
@@ -28,9 +41,16 @@
     box-sizing: content-box;
     position: relative;
     outline: none;
+    @include media("<=phone") {
+      padding: 10px 0 10px 0;
+      height: 35px;
+    }
 
     &:not(:last-child) {
       border-right: 1px solid orangered;
+      @include media("<=phone") {
+        border-right: 0.6px solid orangered;
+      }
     }
   }
   .active {
@@ -47,6 +67,10 @@
       width: calc(100% + 2px);
       height: 5px;
       background: orangered;
+      @include media("<=phone") {
+        height: 2px;
+        top: -1px;
+      }
     }
   }
 

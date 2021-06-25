@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import useApi from "../Hooks/UseApi";
-import { getdetail } from "../API/Endpoints";
+import React, { useState } from "react";
+
 import { Ratingscom } from "./ratingscom";
 import { useDispatch, useSelector } from "react-redux";
 import { Addtofav, Removefromfav } from "../Redux/actioncreator";
@@ -43,23 +41,20 @@ export const DetailCom = ({
       <div className="detail__content">
         <div className="detail__content__img">
           <img
-            style={{
-              width: "250px",
-              marginLeft: "180px",
-
-              cursor: "pointer",
-              border: "2px solid #fff",
-            }}
+            className="detail__content__images"
             src={getposter(img)}
             alt="poster"
           />
         </div>
         <div className="detail__content__description">
-          <h1 className="detail__description__heading">{title}</h1>
+          <h1 className="detail__content__heading">{title}</h1>
           <p> {description}</p>
-          <div className="detail__description__rating">
-            <Ratingscom stars={ratings / 2} />
-          </div>
+
+          <Ratingscom
+            className="detail__description__rating"
+            stars={ratings / 2}
+          />
+
           {name === "Remind Later" ? (
             <div className="detail__btncontainer">
               <a className="detail__btn">Book Now</a>

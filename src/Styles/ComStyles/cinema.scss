@@ -4,8 +4,16 @@
   align-items: center;
   text-align: center;
   margin-top: 8%;
+
+  @include media("<=phone") {
+    width: 80%;
+  }
+
   &__container {
     perspective: 500px;
+    @include media("<=phone") {
+      width: 90%;
+    }
   }
 
   &__Screen {
@@ -15,6 +23,13 @@
     box-shadow: 0 0px 2px 2px;
     width: 100%;
     margin-right: 20%;
+    @include media("<=phone") {
+      width: 100%;
+      margin-left: 12%;
+    }
+    @include media("<=phonesmall-2") {
+      height: 80px;
+    }
 
     &:hover {
       background: rgb(212, 205, 205);
@@ -30,6 +45,19 @@
 
     margin-top: 10%;
     width: 50%;
+    @include media("<=phone") {
+      width: 60%;
+      grid-template-columns: repeat(7, 53px);
+
+      grid-gap: 2px;
+    }
+    @include media("<=phonesmall") {
+      grid-template-columns: repeat(6, 55px);
+      margin-left: 3px;
+    }
+    @include media("<=phonesmall-2") {
+      grid-template-columns: repeat(5, 55px);
+    }
   }
   &__Seat {
     width: 30px;
@@ -70,6 +98,9 @@
     }
     &:nth-of-type(12n + 10) {
       margin-right: 25px;
+    }
+
+    @include media("<=phone") {
     }
   }
 }

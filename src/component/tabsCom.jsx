@@ -2,23 +2,30 @@ import React, { useState } from "react";
 import { useCallback } from "react";
 import { Cinema } from "./cinema";
 import { TabsectionOneCom } from "./tabsectiononeCom";
+import { useMedia } from "../Hooks/UseMedia";
 export const TabsCom = () => {
-  const [date, Setdate] = useState();
+  //dates to display on a last Payment Screen
+  const [date, Setdate] = useState({ date: "null", day: "null" });
 
-  const callback = useCallback((date) => {
-    Setdate(date);
+  console.log(date);
+
+  const callback = useCallback(() => {
+    //getting the dates here
+    console.log(`This is the Date ${date.date} ${date.day}`);
   }, []);
 
-  console.log(`This is the Date ${date}`);
-
+  //this for toggling the tabs
   const [togle, Settogle] = useState(1);
 
   //chandling the events on a button
   const btnhandler = (index) => {
-    //do something ?
+    //toggling index so that we can move forward with button
     Settogle(index);
   };
-  const seats = [...Array(144).keys()];
+
+  const phone = useMedia(["(max-width: 400px)"], [true], false);
+
+  const seats = phone ? [...Array(54).keys()] : [...Array(120).keys()];
 
   return (
     <div className="tabs">
@@ -28,13 +35,17 @@ export const TabsCom = () => {
             className={togle === 1 ? "tab active" : "tab"}
             onClick={() => Settogle(1)}
           >
-            <div className="tabs__headings">Choose Session</div>
+            <div className="tabs__headings">
+              Choose <br /> Session
+            </div>
           </div>
           <div
             className={togle === 2 ? "tab active" : "tab"}
             onClick={() => Settogle(2)}
           >
-            <div className="tabs__headings">Select Seats</div>
+            <div className="tabs__headings">
+              Select <br /> Seats
+            </div>
           </div>
           <div
             className={togle === 3 ? "tab active" : "tab"}
@@ -55,37 +66,14 @@ export const TabsCom = () => {
         <div className="tabs__content">
           <div className={togle === 1 ? "content" : "content hidden"}>
             {/* //importing a Seprate Section for Content */}
-            <TabsectionOneCom parentCallback={callback} />
-            <div
-              style={{
-                padding: "10px",
-                width: "200px",
-                background: "orangered",
-                fontSize: "1.5rem",
-                textAlign: "center",
-                cursor: "pointer",
-                display: "flex",
-              }}
-              onClick={() => btnhandler(2)}
-            >
-              Click it to move Forward
-            </div>
+            <TabsectionOneCom
+              parentCallback={callback} //passing the callback to get the dated data on parent state
+              onClick={() => btnhandler(2)} //passing the handler to move the screen ahead
+            />
           </div>
           <div className={togle === 2 ? "content" : "content hidden"}>
+            {/* importing a seprate section for Cinema */}
             <Cinema seats={seats} />
-            <div
-              style={{
-                padding: "10px",
-                width: "200px",
-                background: "orangered",
-                fontSize: "1.5rem",
-                textAlign: "center",
-                cursor: "pointer",
-              }}
-              onClick={() => btnhandler(3)}
-            >
-              Click it to move Forward
-            </div>
           </div>
           <div className={togle === 3 ? "content" : "content hidden"}>
             <h2>Tabs Content Three</h2>

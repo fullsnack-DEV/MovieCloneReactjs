@@ -30,7 +30,7 @@ export const DetailPage = () => {
   //getting the Movie Backdrop
 
   return (
-    <div>
+    <div style={{ overflow: "hidden" }}>
       <DetailCom
         img={movie.poster_path}
         description={movie.overview}

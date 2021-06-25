@@ -2,12 +2,21 @@
   margin-left: 20em;
   max-width: 600px;
 
+  @include media("<=phone") {
+    width: 90%;
+    margin-left: 1em;
+    margin-top: 25em;
+  }
+
   &__title {
     font-size: 1.5rem;
     width: 130px;
     margin-bottom: 1em;
     border-bottom: 2px solid orangered;
     letter-spacing: 0.4rem;
+    @include media("<=phone") {
+      font-size: 1.2rem;
+    }
   }
 
   &__container {
@@ -15,6 +24,10 @@
     gap: 50px;
     align-items: center;
     justify-content: space-around;
+    @include media("<=phone") {
+      gap: 5px;
+      margin: 3rem 0 3rem 0;
+    }
   }
 
   &__tomato {
@@ -24,9 +37,17 @@
     align-items: center;
 
     img {
+      height: 80px;
+      width: 80px;
+
       animation: bounce 1s infinite;
 
       -webkit-animation-duration: 1s;
+
+      @include media("<=phone") {
+        height: 35px;
+        width: 35px;
+      }
     }
   }
   &__runtime {
@@ -36,9 +57,15 @@
     align-items: center;
     letter-spacing: 0.2rem;
     img {
+      height: 80px;
+      width: 80px;
       animation: bounce 1s infinite;
 
       -webkit-animation-duration: 1s;
+      @include media("<=phone") {
+        height: 35px;
+        width: 35px;
+      }
     }
   }
   &__voting {
@@ -47,9 +74,15 @@
     flex-flow: column;
     align-items: center;
     img {
+      height: 80px;
+      width: 80px;
       animation: bounce 1s infinite;
 
       -webkit-animation-duration: 1s;
+      @include media("<=phone") {
+        height: 35px;
+        width: 35px;
+      }
     }
   }
   @keyframes bounce {
@@ -69,6 +102,10 @@
   }
   h2 {
     margin-top: 0.5em;
+
+    @include media("<=phone") {
+      font-size: 1.5rem;
+    }
   }
   span {
     color: orangered;

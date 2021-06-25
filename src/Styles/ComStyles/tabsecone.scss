@@ -1,9 +1,20 @@
 .tabsection {
   padding: 50px;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+
+  @include media("<=phone") {
+    padding: 10px;
+    margin-top: 2rem;
+  }
 
   &__title {
     font-size: 3rem;
     letter-spacing: 0.2em;
+    @include media("<=phone") {
+      font-size: 2rem;
+    }
   }
 
   &__one {
@@ -13,6 +24,7 @@
   }
   &__item {
     display: flex;
+    flex-wrap: wrap;
   }
   &__dates {
     padding: 20px 20px 20px 20px;
@@ -20,8 +32,8 @@
     margin-top: 3rem;
     font-family: "Nunito";
   }
+
   .date {
-    background-color: #e80f0c;
     height: 80px;
     width: 55px;
     display: flex;
@@ -33,32 +45,51 @@
     font-family: "Nunito";
     cursor: pointer;
     font-weight: bold;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-
-    background: -moz-linear-gradient(
-      left,
-      #cccccc 0%,
-      #eeeeee 50%,
-      #eeeeee 50%,
-      #cccccc 100%
-    );
-    background: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      color-stop(0%, #cccccc),
-      color-stop(50%, #eeeeee),
-      color-stop(50%, #eeeeee),
-      color-stop(100%, #cccccc)
-    );
+    background-color: #fff;
     color: black;
     letter-spacing: 0.1em;
+
+    &--0 {
+      background-color: cornflowerblue;
+      &---0 {
+        background-color: cornsilk;
+      }
+    }
+    &--1 {
+      background-color: cornflowerblue;
+      &---1 {
+        background-color: cornsilk;
+      }
+    }
+    &--2 {
+      background-color: cornflowerblue;
+    }
+    &--3 {
+      background-color: cornflowerblue;
+    }
+    &--4 {
+      background-color: cornflowerblue;
+    }
+    &--5 {
+      background-color: cornflowerblue;
+    }
   }
+
   .day {
     font-size: 1.6rem;
     font-family: "Nunito";
     margin-bottom: 5px;
     letter-spacing: 0.2em;
+  }
+
+  &__button {
+    background-color: orangered;
+    padding: 8px;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 150px;
+    margin-top: 50px;
+    align-self: center;
   }
 }

@@ -21,3 +21,13 @@ export const Removefromfav = (id) => {
     },
   };
 };
+
+export const getdates = (date, day) => {
+  return {
+    type: "GETDATE",
+    payload: {
+      date: date,
+      day: day,
+    },
+  };
+};
