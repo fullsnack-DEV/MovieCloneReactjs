@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useHistory } from "react-router-dom";
 import Home from "../Assets/Image/hometab.png";
 import Tickets from "../Assets/Image/ticketbar.png";
 import Movie from "../Assets/Image/videoplayertab.png";
@@ -11,6 +12,16 @@ import {
 } from "framer-motion";
 import { useState } from "react";
 export const Mobtabs = () => {
+  const history = useHistory();
+
+  const routetabhandlers = (name) => {
+    if (name === "Home") {
+      history.push("/");
+    } else if (name === "Reminder") {
+      history.push("/fav");
+    }
+  };
+
   const tabsicons = [
     {
       icon: Home,
@@ -22,7 +33,7 @@ export const Mobtabs = () => {
     },
     {
       icon: Reminder,
-      name: "REminder",
+      name: "Reminder",
     },
     {
       icon: Tickets,
@@ -43,6 +54,9 @@ export const Mobtabs = () => {
                       src={tab.icon}
                       whileTap={{ translateY: "-20%" }}
                       alt={tab.name}
+                      onClick={() => {
+                        routetabhandlers(tab.name);
+                      }}
                     />
                   </li>
                 );

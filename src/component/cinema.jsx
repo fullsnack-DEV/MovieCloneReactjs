@@ -1,8 +1,9 @@
 import React, { useCallback } from "react";
 import { useState } from "react";
+import { ButtomCom } from "./btncom";
 import clsx from "clsx";
 
-export const Cinema = ({ seats }) => {
+export const Cinema = ({ seats, onClick }) => {
   //creating a state array to store the Selected Seats
   //intializing it with some dummy seats
   const [selectedseats, Setselectedseats] = useState([]);
@@ -83,6 +84,7 @@ export const Cinema = ({ seats }) => {
             })}
           </div>
         </div>
+        <ButtomCom onClick={onClick} />
       </div>
     </>
   );

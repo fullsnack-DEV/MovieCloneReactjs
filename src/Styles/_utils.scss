@@ -9,3 +9,23 @@
   display: flex;
   align-content: center;
 }
+
+.utils {
+  &__button {
+    background-color: orangered;
+    padding: 8px;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 150px;
+    margin-top: 50px;
+    align-self: center;
+    cursor: pointer;
+
+    @include media("<=phone") {
+      padding: 5px;
+      font-size: 1.2rem;
+      width: 100px;
+    }
+  }
+}

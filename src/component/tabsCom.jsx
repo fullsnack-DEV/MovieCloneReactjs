@@ -34,7 +34,7 @@ export const TabsCom = () => {
             onClick={() => btnhandler(1)}
           >
             <div className="tabs__headings">
-              Choose <br /> Session
+              Select <br /> Session
             </div>
           </div>
           <div className={togle === 2 ? "tab active" : "tab"}>
@@ -69,7 +69,7 @@ export const TabsCom = () => {
             {/* cinema */}
             {/* importing a seprate section for Cinema */}
 
-            <Cinema seats={seats} />
+            <Cinema seats={seats} onClick={() => btnhandler(3)} />
           </div>
           <div className={togle === 3 ? "content" : "content hidden"}>
             <h2>Tabs Content Three</h2>

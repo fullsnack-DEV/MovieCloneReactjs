@@ -1,17 +1,28 @@
 .detail {
-  height: 70vh;
+  height: 100vh;
 
   padding: 20px 0px 20px 0px;
   &__container {
-    height: 500px;
+    height: 100%;
     width: 100%;
     max-width: 1500px;
+
+    @include media("<=phone") {
+      height: 100%;
+    }
   }
 
   &__content {
     display: flex;
     align-items: center;
     margin-top: 50px;
+
+    @include media("<=tablet") {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      text-align: center;
+    }
 
     @include media("<=phone") {
       display: flex;
@@ -27,6 +38,9 @@
       border: 2px solid #fff;
 
       @include media("<=phone") {
+        margin-left: 0px;
+      }
+      @include media("<=tablet") {
         margin-left: 0px;
       }
     }
@@ -47,6 +61,14 @@
         margin-left: 1rem;
         text-align: center;
       }
+      @include media("<=tablet") {
+        margin-top: 2rem;
+        width: 90%;
+        align-self: center;
+        margin-left: 0rem;
+
+        text-align: center;
+      }
 
       h1 {
         font-size: 3.2rem;
@@ -56,6 +78,10 @@
         font-weight: bold;
 
         @include media("<=phone") {
+          font-size: 2rem;
+          text-align: center;
+        }
+        @include media("<=tablet") {
           font-size: 2rem;
           text-align: center;
         }
@@ -76,6 +102,14 @@
           text-align: center;
           margin-bottom: 1.3rem;
           margin-right: 1px;
+          -webkit-line-clamp: 4;
+        }
+
+        @include media("<=tablet") {
+          font-size: 1.8rem;
+          text-align: center;
+          margin-bottom: 1.3rem;
+          margin-right: 1px;
         }
       }
 
@@ -84,6 +118,9 @@
         margin-top: 5%;
 
         @include media("<=phone") {
+          margin-top: 10%;
+        }
+        @include media("<=tablet") {
           margin-top: 10%;
         }
       }

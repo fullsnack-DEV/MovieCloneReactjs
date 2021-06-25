@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AnimateSharedLayout, motion } from "framer-motion";
 import { getdates } from "../Redux/actioncreator";
 import { Timecom } from "../component/timecom";
+import { ButtomCom } from "./btncom";
 
 export const TabsectionOneCom = React.memo(({ parentCallback, onClick }) => {
   const [active, setActive] = useState();
@@ -56,10 +57,7 @@ export const TabsectionOneCom = React.memo(({ parentCallback, onClick }) => {
           )}
         </div>
       </div>
-
-      <div onClick={onClick} className="tabsection__button">
-        <h2> Next </h2>
-      </div>
+      <ButtomCom onClick={onClick} />
     </div>
   );
 });

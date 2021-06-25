@@ -2,10 +2,16 @@
   margin-left: 20em;
   max-width: 600px;
 
+  @include media("<=tablet") {
+    width: 90%;
+    margin-left: 8em;
+    margin-top: 25em;
+  }
+
   @include media("<=phone") {
     width: 90%;
     margin-left: 1em;
-    margin-top: 25em;
+    margin-top: 5em;
   }
 
   &__title {
