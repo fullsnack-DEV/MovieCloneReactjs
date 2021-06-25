@@ -8,6 +8,7 @@ import Store from "./Redux/store.jsx";
 import { FavPage } from "./Pages/FavPage";
 import { Mobtabs } from "./component/Mobtabs";
 import { useMedia } from "./Hooks/useMedia";
+import { Recommended } from "./Pages/Recommended";
 function App() {
   const phone = useMedia("(max-width:400px )");
 
@@ -20,6 +21,7 @@ function App() {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/detail/:id" component={DetailPage} />
               <Route exact path="/fav" component={FavPage} />
+              <Route exact path="/recomanded" component={Recommended} />
             </Switch>
             <Mobtabs />
           </Router>
