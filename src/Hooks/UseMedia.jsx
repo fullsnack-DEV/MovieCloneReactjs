@@ -1,33 +1,40 @@
-import { useCallback, useEffect, useState } from "react";
+//creating a Custome Media Hook
+import { useState, useEffect } from "react";
 
-export const useMedia = (queries = [], values = [], defaluvalues) => {
-  //create a Media Query List
+export const useMedia = (query, initialState = false) => {
+  //setting the state in the state var
+  //state will be true and false
+  const [state, Setstate] = useState(initialState);
+  //our Intial State Would either be True or false
 
-  const MediaQueryList = queries.map((q) => window.matchMedia(q));
-  // console.log(MediaQueryList);
-
-  //get value func
-  //Wrapping with usecallback to Prevent unecessary render
-  const getvalue = useCallback(() => {
-    const index = MediaQueryList.findIndex((mql) => mql.matches);
-    // console.log(index);
-    // console.log("Thisis tva;", values[index]);
-    return typeof values[index] !== "undefined" ? values[index] : defaluvalues;
-  }, [MediaQueryList, values, defaluvalues]);
-
-  //console.log(getvalue());
-
-  const [value, setValue] = useState(getvalue);
-
-  //side effect
-
+  //Creating a Side Effect
   useEffect(() => {
-    const handler = () => setValue(getvalue);
-    MediaQueryList.forEach((mql) => mql.addListener(handler));
+    let mounting = true;
 
-    //Cleanup
-    return () => MediaQueryList.forEach((mql) => mql.removeListener(handler));
-  }, [getvalue, MediaQueryList]);
+    const mql = window.matchMedia(query);
 
-  return value;
+    // create a on change function so that we can pass it to eventlistener
+    const onchange = () => {
+      //if component did'nt mount then return
+
+      if (!mounting) {
+        return;
+      }
+
+      //if mounted then set the state
+
+      Setstate(Boolean(mql.matches));
+    };
+
+    mql.addListener(onchange);
+    Setstate(mql.matches);
+
+    //cleanup the lisner
+
+    return () => {
+      mounting = false;
+      mql.removeListener(onchange);
+    };
+  }, [query]);
+  return state;
 };

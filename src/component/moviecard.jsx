@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import useApi from "../Hooks/UseApi";
+import useApi from "../Hooks/useApi";
 
 import Playbtn from "../Assets/Image/play.png";
 import Play from "../Assets/Image/play-button.png";

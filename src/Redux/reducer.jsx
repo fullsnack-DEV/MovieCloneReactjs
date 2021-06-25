@@ -8,6 +8,11 @@ const IntialState = {
       day: null,
     },
   ],
+  time: [
+    {
+      time: null,
+    },
+  ],
 };
 console.log(IntialState);
 
@@ -39,6 +44,15 @@ export const Favreducer = (state = IntialState, action) => {
         {
           date: action.payload.date,
           day: action.payload.day,
+        },
+      ],
+    };
+  } else if (action.type === "GETTIME") {
+    return {
+      ...state,
+      time: [
+        {
+          time: action.payload.time,
         },
       ],
     };

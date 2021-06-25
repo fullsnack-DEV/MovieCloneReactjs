@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useCallback } from "react";
 import { Cinema } from "./cinema";
 import { TabsectionOneCom } from "./tabsectiononeCom";
-import { useMedia } from "../Hooks/UseMedia";
+
+import { useMedia } from "../Hooks/useMedia";
 export const TabsCom = () => {
   //dates to display on a last Payment Screen
   const [date, Setdate] = useState({ date: "null", day: "null" });
@@ -23,7 +24,7 @@ export const TabsCom = () => {
     Settogle(index);
   };
 
-  const phone = useMedia(["(max-width: 400px)"], [true], false);
+  const phone = useMedia("(max-width: 400px)");
 
   const seats = phone ? [...Array(54).keys()] : [...Array(120).keys()];
 

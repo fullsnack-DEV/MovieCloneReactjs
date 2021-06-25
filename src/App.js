@@ -7,14 +7,9 @@ import { Provider } from "react-redux";
 import Store from "./Redux/store.jsx";
 import { FavPage } from "./Pages/FavPage";
 import { Mobtabs } from "./component/Mobtabs";
-import { useMedia } from "./Hooks/UseMedia.jsx";
+import { useMedia } from "./Hooks/useMedia";
 function App() {
-  const phone = useMedia(
-    //array of the Media Quries
-    ["(max-width: 400px)"],
-    [true],
-    false
-  );
+  const phone = useMedia("(max-width:400px )");
 
   return (
     <>

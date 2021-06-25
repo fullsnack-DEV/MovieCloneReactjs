@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { CinemaScreen } from "../component/CinemaScreen";
 import { DetailCom } from "../component/detailCom";
-import useApi from "../Hooks/UseApi.jsx";
+import useApi from "../Hooks/useApi.jsx";
 import { getdetail } from "../API/Endpoints";
 import { useParams } from "react-router";
 import { Stats } from "../component/stats";

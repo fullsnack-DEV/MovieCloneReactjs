@@ -1,0 +1,39 @@
+.timecontainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1.6rem;
+
+  @include media("<=phone") {
+    margin-left: 0.5rem;
+  }
+  &__time {
+    padding: 25px 10px 0px 10px;
+
+    @include media("<=phone") {
+      padding: 15px 10px 0px 10px;
+    }
+  }
+  &__times {
+    background-color: skyblue;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+
+    &--0 {
+      background-color: cornflowerblue;
+    }
+    &--1 {
+      background-color: cornflowerblue;
+    }
+    &--2 {
+      background-color: cornflowerblue;
+    }
+    &--3 {
+      background-color: cornflowerblue;
+    }
+  }
+}

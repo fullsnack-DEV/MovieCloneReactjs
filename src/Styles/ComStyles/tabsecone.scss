@@ -31,6 +31,11 @@
     font-size: 2.6rem;
     margin-top: 3rem;
     font-family: "Nunito";
+
+    @include media("<=phone") {
+      padding: 10px 5px 10px 5px;
+      font-size: 2rem;
+    }
   }
 
   .date {
@@ -49,17 +54,16 @@
     color: black;
     letter-spacing: 0.1em;
 
+    @include media("<=phone") {
+      height: 70px;
+      width: 45px;
+    }
+
     &--0 {
       background-color: cornflowerblue;
-      &---0 {
-        background-color: cornsilk;
-      }
     }
     &--1 {
       background-color: cornflowerblue;
-      &---1 {
-        background-color: cornsilk;
-      }
     }
     &--2 {
       background-color: cornflowerblue;
@@ -80,6 +84,9 @@
     font-family: "Nunito";
     margin-bottom: 5px;
     letter-spacing: 0.2em;
+    @include media("<=phone") {
+      font-size: 1.3rem;
+    }
   }
 
   &__button {
@@ -91,5 +98,12 @@
     width: 150px;
     margin-top: 50px;
     align-self: center;
+    cursor: pointer;
+
+    @include media("<=phone") {
+      padding: 5px;
+      font-size: 1.2rem;
+      width: 100px;
+    }
   }
 }

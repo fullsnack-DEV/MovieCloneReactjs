@@ -22,12 +22,22 @@ export const Removefromfav = (id) => {
   };
 };
 
-export const getdates = (date, day) => {
+export const getdates = (date = null, day = null, time = null) => {
   return {
     type: "GETDATE",
     payload: {
       date: date,
       day: day,
+      time: time,
+    },
+  };
+};
+
+export const gettime = (time = null) => {
+  return {
+    type: "GETTIME",
+    payload: {
+      time: time,
     },
   };
 };

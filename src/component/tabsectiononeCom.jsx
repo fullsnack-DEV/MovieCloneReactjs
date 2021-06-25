@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimateSharedLayout, motion } from "framer-motion";
 import { getdates } from "../Redux/actioncreator";
+import { Timecom } from "../component/timecom";
 
 export const TabsectionOneCom = React.memo(({ parentCallback, onClick }) => {
   const [active, setActive] = useState();
@@ -34,6 +35,9 @@ export const TabsectionOneCom = React.memo(({ parentCallback, onClick }) => {
     <div className="tabsection">
       <div className="tabsection__one">
         <h2 className="tabsection__title">This Month</h2>
+
+        <Timecom />
+
         <div className="tabsection__item">
           {React.Children.toArray(
             dates.map((date, i) => {

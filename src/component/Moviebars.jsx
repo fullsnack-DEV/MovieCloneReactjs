@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { AnimateSharedLayout, motion } from "framer-motion";
 
-import useApi from "../Hooks/UseApi";
+import useApi from "../Hooks/useApi";
 import { getupcoming } from "../API/Endpoints";
 import { useHistory } from "react-router-dom";
 
-import { useMedia } from "../Hooks/UseMedia";
+import { useMedia } from "../Hooks/useMedia";
 
 export const Moviebars = () => {
-  const phone = useMedia(
-    //array of the Media Quries
-    ["(max-width: 400px)"],
-    [true],
-    false
-  );
+  const phone = useMedia("(max-width: 400px)");
 
   const { data: bars, error, loading, request: loadbars } = useApi(getupcoming);
   const [name, Setname] = useState();
