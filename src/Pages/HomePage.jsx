@@ -11,14 +11,14 @@ import {
 import { useRef } from "react";
 export const HomePage = () => {
   return (
-    <>
+    <div style={{ marginBottom: "8rem" }}>
       {/* <Header /> */}
       <Banner />
-      <MovieCom endpoint={getmovies} title={"Opening this Week"} top />
+      <MovieCom endpoint={getmovies} title={"Opening this Week"} istop />
       <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
       <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
       <MovieCom endpoint={Ontheair} title={"Streaming On Tv"} p />
-    </>
+    </div>
   );
 };
 

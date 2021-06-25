@@ -1,6 +1,10 @@
 .center {
   margin: 0 auto;
 }
+
+.flex {
+  display: flex;
+}
 .flex-ai-c {
   display: flex;
   align-items: center;
@@ -8,6 +12,15 @@
 .flex-ac-c {
   display: flex;
   align-content: center;
+}
+.flex-fc-ai-c {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.flex-fc {
+  display: flex;
+  flex-flow: column;
 }
 
 .utils {

@@ -39,7 +39,7 @@ export const Cinema = ({ seats, onClick }) => {
 
   return (
     <>
-      <div className="Cinema">
+      <div className="Cinema  flex-fc-ai-c ">
         <div className="Cinema__container">
           <div className="Cinema__Screen" />
 

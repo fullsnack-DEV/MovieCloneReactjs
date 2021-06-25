@@ -27,8 +27,8 @@ export const TabsCom = () => {
 
   return (
     <div className="tabs">
-      <div className="tabs__container center ">
-        <div className="tabs__block">
+      <div className="tabs__container center flex-fc ">
+        <div className="tabs__block  flex-ai-c">
           <div
             className={togle === 1 ? "tab active" : "tab"}
             onClick={() => btnhandler(1)}

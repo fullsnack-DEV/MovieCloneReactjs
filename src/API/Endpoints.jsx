@@ -33,10 +33,24 @@ const Ontheair = () =>
 
 //to get the movie information
 const getdetail = (id) => {
-  console.log(`this is IDD ${id}`);
+  //console.log(`this is IDD ${id}`);
   return Fetchapi("movie").get(
     `${id}?api_key=6210c279cdb193474eab3c90fade739b&language=en-US`
   );
 };
 
-export { getmovies, getnowplaying, getupcoming, Ontheair, getdetail };
+//getlatest
+
+const gettoprated = () =>
+  Fetchapi("movie").get(
+    `/top_rated?api_key=6210c279cdb193474eab3c90fade739b&language=en-US&page=1`
+  );
+
+export {
+  getmovies,
+  getnowplaying,
+  getupcoming,
+  Ontheair,
+  getdetail,
+  gettoprated,
+};

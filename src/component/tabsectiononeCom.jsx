@@ -33,13 +33,13 @@ export const TabsectionOneCom = React.memo(({ parentCallback, onClick }) => {
   ];
 
   return (
-    <div className="tabsection">
+    <div className="tabsection flex-fc">
       <div className="tabsection__one">
         <h2 className="tabsection__title">This Month</h2>
 
         <Timecom />
 
-        <div className="tabsection__item">
+        <div className="tabsection__item  flex">
           {React.Children.toArray(
             dates.map((date, i) => {
               return (

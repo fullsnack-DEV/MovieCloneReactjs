@@ -35,7 +35,7 @@ export const Moviebars = () => {
   return (
     <div>
       <AnimateSharedLayout>
-        <motion.section className="container-bar">
+        <motion.section className="container-bar flex">
           {phone
             ? React.Children.toArray(
                 bars.slice(0, 6).map((bar, i) => {

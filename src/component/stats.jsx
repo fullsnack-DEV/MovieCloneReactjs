@@ -15,18 +15,18 @@ export const Stats = ({ votes, time }) => {
       <div className="stats__title">
         <h1>Ratings</h1>
       </div>
-      <div className="stats__container">
-        <div className="stats__tomato">
+      <div className="stats__container flex-ai-c">
+        <div className="stats__tomato  flex-fc-ai-c">
           <img src={tomato} alt="" />
           <h2>
             <span>{votes * 10}%</span> Fresh
           </h2>
         </div>
-        <div className="stats__runtime">
+        <div className="stats__runtime flex-fc-ai-c">
           <img src={popcorn} alt="" />
           <h2>{convert(time)}</h2>
         </div>
-        <div className="stats__voting">
+        <div className="stats__voting flex-fc-ai-c">
           <img src={IMDB} alt="" />
           <h2>56</h2>
         </div>

@@ -38,14 +38,13 @@ export const DetailCom = ({
 
   return (
     <div className="detail__container center">
-      <div className="detail__content">
-        <div className="detail__content__img">
-          <img
-            className="detail__content__images"
-            src={getposter(img)}
-            alt="poster"
-          />
-        </div>
+      <div className="detail__content  flex-ai-c">
+        <img
+          className="detail__content__images"
+          src={getposter(img)}
+          alt="poster"
+        />
+
         <div className="detail__content__description">
           <h1 className="detail__content__heading">{title}</h1>
           <p> {description}</p>

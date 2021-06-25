@@ -1,7 +1,6 @@
 .tabsection {
   padding: 50px;
-  display: flex;
-  flex-flow: column;
+
   overflow: hidden;
 
   @include media("<=phone") {
@@ -23,7 +22,6 @@
     }
   }
   &__item {
-    display: flex;
     flex-wrap: wrap;
   }
   &__dates {

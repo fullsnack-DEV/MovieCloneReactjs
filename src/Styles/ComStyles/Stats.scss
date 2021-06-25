@@ -1,11 +1,12 @@
 .stats {
   margin-left: 20em;
   max-width: 600px;
+  margin-top: 3em;
 
   @include media("<=tablet") {
     width: 90%;
     margin-left: 8em;
-    margin-top: 25em;
+    margin-top: 15em;
   }
 
   @include media("<=phone") {
@@ -26,9 +27,8 @@
   }
 
   &__container {
-    display: flex;
     gap: 50px;
-    align-items: center;
+
     justify-content: space-around;
     @include media("<=phone") {
       gap: 5px;
@@ -38,9 +38,6 @@
 
   &__tomato {
     font-size: 1.8rem;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
 
     img {
       height: 80px;
@@ -58,9 +55,7 @@
   }
   &__runtime {
     font-size: 1.8rem;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+
     letter-spacing: 0.2rem;
     img {
       height: 80px;
@@ -76,9 +71,7 @@
   }
   &__voting {
     font-size: 1.8rem;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+
     img {
       height: 80px;
       width: 80px;

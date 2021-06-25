@@ -9,7 +9,7 @@ import animation from "../lottie.json";
 
 //shufflimg the array of the movies so that it don't repeat
 
-export const MovieCom = ({ endpoint, title, top, p }) => {
+export const MovieCom = ({ endpoint, title, istop, p, ispicks }) => {
   const history = useHistory();
 
   const handler = (id) => {
@@ -44,23 +44,25 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
   //function to shuffle the movie array
 
   function shuffle(movies) {
-    return movies.sort(() => Math.random() - 0.5);
+    return movies.sort(() => Math.random() - 0.8);
   }
 
   let shuffledmovies = shuffle(movies);
+
+  //Movie splicing accordig to condition
 
   //getting poster Path
   const getposter = (path) =>
     `https://image.tmdb.org/t/p/w440_and_h660_face${path}`;
 
   return (
-    <div className="row-container">
+    <div className="row__container">
       {loading ? (
         <Lottie options={defaultOptions} height={200} width={200} />
       ) : (
         <div className="row">
-          <div className="row__title">
-            {top ? (
+          <div className="row__title flex-ai-c ">
+            {istop ? (
               <img className="row__title__img" src={Playbtn} alt="" />
             ) : (
               <img className="row__title__img" src={Play} alt="" />
@@ -75,15 +77,15 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
                 </p>
               ) : (
                 <p>
-                  Book Your{" "}
+                  Book Your
                   <span className="row__textwrapper--span2">Seats</span>
                   Now!
                 </p>
               )}
             </div>
           </div>
-          <div className="row__movies">
-            {top
+          <div className="row__movies  flex-ai-c">
+            {istop
               ? React.Children.toArray(
                   movies.splice(0, 10).map((movie, i) => (
                     <div className="row__imgcontainer">
@@ -93,7 +95,7 @@ export const MovieCom = ({ endpoint, title, top, p }) => {
                         alt={movie.name}
                         onClick={() => handler(movie.id)}
                       />
-                      {top ? <h1 className="row__nums">{i + 1} </h1> : null}
+                      {istop ? <h1 className="row__nums">{i + 1} </h1> : null}
                     </div>
                   ))
                 )

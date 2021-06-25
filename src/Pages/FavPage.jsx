@@ -9,29 +9,9 @@ export const FavPage = () => {
   return (
     <div className="fav">
       {Favriotes[0] ? (
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "4rem",
-            marginTop: "2rem",
-            fontFamily: "Dancing Script",
-            "font-weight": 700,
-          }}
-        >
-          Your Reminders
-        </h2>
+        <h2 className="fav__heading">Your Reminders</h2>
       ) : (
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "4rem",
-            marginTop: "2rem",
-            fontFamily: "Dancing Script",
-            "font-weight": 700,
-          }}
-        >
-          No Reminders
-        </h2>
+        <h2 className="fav__heading">No Reminders</h2>
       )}
 
       {React.Children.toArray(

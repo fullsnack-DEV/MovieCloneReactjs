@@ -1,8 +1,7 @@
 .tabs {
   &__container {
     margin-top: 5%;
-    display: flex;
-    flex-flow: column;
+
     width: 85%;
 
     @include media("<=phone") {
@@ -11,9 +10,6 @@
   }
 
   &__block {
-    display: flex;
-
-    align-items: center;
     justify-content: space-around;
 
     @include media("<=phone") {
