@@ -84,7 +84,9 @@ export const Cinema = ({ seats, onClick }) => {
             })}
           </div>
         </div>
-        <ButtomCom onClick={onClick} />
+        <div style={{ marginLeft: "5rem" }}>
+          <ButtomCom onClick={onClick} />
+        </div>
       </div>
     </>
   );

@@ -21,9 +21,9 @@ export const TabsCom = () => {
     Settogle(index);
   };
 
-  const phone = useMedia("(max-width: 400px)");
+  const istablet = useMedia("(max-width: 768px)");
 
-  const seats = phone ? [...Array(54).keys()] : [...Array(120).keys()];
+  const seats = istablet ? [...Array(54).keys()] : [...Array(120).keys()];
 
   return (
     <div className="tabs">
@@ -73,6 +73,8 @@ export const TabsCom = () => {
           </div>
           <div className={togle === 3 ? "content" : "content hidden"}>
             <h2>Tabs Content Three</h2>
+
+            {/*paymentcomponent */}
           </div>
         </div>
       </div>

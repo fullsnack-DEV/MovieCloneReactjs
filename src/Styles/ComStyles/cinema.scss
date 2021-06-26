@@ -27,7 +27,7 @@
     border-radius: 10px;
 
     @include media("<=phone") {
-      margin-left: 5rem;
+      margin-left: 3.5rem;
       margin-top: 3rem;
     }
     @include media("<=phonesmall-2") {

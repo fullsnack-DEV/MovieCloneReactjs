@@ -12,13 +12,15 @@ export const Timecom = () => {
   const [active, Setactive] = useState(false);
 
   const times = [
-    { time: "9:00 am To 11:15 am" },
+    { time: "9:00" },
 
-    { time: "12:00 pm To 2:00 pm" },
+    { time: "12:00" },
 
-    { time: "3:00 pm To 5:16pm" },
+    { time: "3:00" },
 
-    { time: "6:00 pm To 8:15 pm" },
+    { time: "6:00" },
+
+    { time: "8:00" },
   ];
 
   return (

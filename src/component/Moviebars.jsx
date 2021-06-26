@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import { useMedia } from "../Hooks/useMedia";
 
 export const Moviebars = () => {
-  const phone = useMedia("(max-width: 400px)");
+  const isphone = useMedia("(max-width: 400px)");
 
   const { data: bars, error, loading, request: loadbars } = useApi(getupcoming);
   const [name, Setname] = useState();
@@ -36,7 +36,7 @@ export const Moviebars = () => {
     <div>
       <AnimateSharedLayout>
         <motion.section className="container-bar flex">
-          {phone
+          {isphone
             ? React.Children.toArray(
                 bars.slice(0, 6).map((bar, i) => {
                   return (
