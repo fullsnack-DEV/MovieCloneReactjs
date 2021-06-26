@@ -27,9 +27,7 @@ export const DetailCom = ({
     dispatch(Removefromfav(id));
   };
 
-  const data = useSelector((state) => state.fav);
-
-  console.log("this is fav data", data);
+  const data = useSelector((state) => state);
 
   const getposter = (path) =>
     `https://image.tmdb.org/t/p/w440_and_h660_face${path}`;

@@ -9,6 +9,7 @@ import { FavPage } from "./Pages/FavPage";
 import { Mobtabs } from "./component/Mobtabs";
 import { useMedia } from "./Hooks/useMedia";
 import { Recommended } from "./Pages/Recommended";
+import { MobTicket } from "./Pages/MobTicket";
 function App() {
   const phone = useMedia("(max-width:400px )");
 
@@ -22,6 +23,7 @@ function App() {
               <Route exact path="/detail/:id" component={DetailPage} />
               <Route exact path="/fav" component={FavPage} />
               <Route exact path="/recomanded" component={Recommended} />
+              <Route exact path="/ticket" component={MobTicket} />
             </Switch>
             <Mobtabs />
           </Router>

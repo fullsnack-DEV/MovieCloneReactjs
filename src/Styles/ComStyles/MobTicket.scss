@@ -1,0 +1,113 @@
+.ticket {
+  margin-top: 4rem;
+  display: flex;
+  flex-flow: column;
+
+  &__container {
+    width: 90%;
+
+    margin: 0 auto;
+    max-width: 200px;
+    height: 300px;
+    background-image: linear-gradient(335deg, #ffeba7, #f8ab37);
+    position: relative;
+    z-index: 0;
+  }
+
+  &__topleft {
+    position: absolute;
+    z-index: 5;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(2, 0, 36);
+
+    border-radius: 50px;
+    top: -1.5rem;
+    left: -0.9rem;
+  }
+  &__topright {
+    position: absolute;
+    z-index: 5;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(2, 0, 36);
+    border-radius: 50px;
+    left: 17.5rem;
+    top: -1.5rem;
+  }
+  &__bottomleft {
+    position: absolute;
+    z-index: 5;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(2, 0, 36);
+    border-radius: 50px;
+    top: 28.2rem;
+    left: -0.9rem;
+  }
+  &__bottomright {
+    position: absolute;
+    z-index: 5;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(2, 0, 36);
+    border-radius: 50px;
+    left: 17.6rem;
+    top: 28.2rem;
+  }
+
+  &__dotted {
+    height: 10px;
+    top: 155px;
+    position: inherit;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--2 {
+      top: -1.4rem;
+    }
+    &--3 {
+      top: 27.4rem;
+    }
+
+    &__small {
+      height: 6px;
+
+      width: 6px;
+      border-radius: 50px;
+      background-color: rgb(2, 0, 36);
+    }
+  }
+  &__min {
+    text-align: center;
+    font-size: 2.6rem;
+    color: #000;
+  }
+  &__price {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-top: 1.2rem;
+    letter-spacing: 0.1em;
+    &--span {
+      margin-bottom: 5rem;
+      font-size: 3rem;
+    }
+  }
+  &__time {
+    text-align: center;
+    font-size: 2rem;
+    color: #000;
+    margin-top: 5rem;
+  }
+  &__day {
+    text-align: center;
+    font-size: 2rem;
+    color: #000;
+    margin-top: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+}

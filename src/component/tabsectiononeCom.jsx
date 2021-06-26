@@ -10,9 +10,9 @@ export const TabsectionOneCom = React.memo(({ parentCallback, onClick }) => {
   const [active, setActive] = useState();
   console.log(active);
 
-  const date = useSelector((state) => state.dates);
+  // const date = useSelector((state) => state.dates);
 
-  console.log(date);
+  // console.log(date);
 
   //handler to handle the paretncallback and active state
 
@@ -57,7 +57,7 @@ export const TabsectionOneCom = React.memo(({ parentCallback, onClick }) => {
           )}
         </div>
       </div>
-      <ButtomCom onClick={onClick} />
+      <ButtomCom title="Next" onClick={onClick} />
     </div>
   );
 });

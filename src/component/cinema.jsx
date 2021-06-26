@@ -94,13 +94,27 @@ export const Cinema = ({ seats, onClick }) => {
             })}
           </div>
         </div>
-
-        <div style={{ marginLeft: "8rem" }}>
-          <h1 style={{ marginTop: "3rem", marginBottom: "-3rem" }}>
-            Seats Booked {selectedseats.length}
-          </h1>
-          <ButtomCom onClick={() => dispatchseats(selectedseats.length)} />
-        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexFlow: "column",
+          justifyContent: "center",
+        }}
+      >
+        <h1
+          style={{
+            marginTop: "3rem",
+            marginBottom: "-3rem",
+            alignSelf: "center",
+          }}
+        >
+          Seats Booked {selectedseats.length}
+        </h1>
+        <ButtomCom
+          title="Next"
+          onClick={() => dispatchseats(selectedseats.length)}
+        />
       </div>
     </>
   );

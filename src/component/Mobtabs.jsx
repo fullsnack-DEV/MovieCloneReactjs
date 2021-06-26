@@ -21,6 +21,8 @@ export const Mobtabs = () => {
       history.push("/fav");
     } else if (name === "Movie") {
       history.push("/recomanded");
+    } else if (name === "Tickets") {
+      history.push("/ticket");
     }
   };
 

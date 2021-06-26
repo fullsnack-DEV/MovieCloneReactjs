@@ -73,8 +73,6 @@ export const TabsCom = () => {
             <Cinema seats={seats} onClick={() => btnhandler(3)} />
           </div>
           <div className={togle === 3 ? "content" : "content hidden"}>
-            <h2>Tabs Content Three</h2>
-
             {/*paymentcomponent */}
             <PaymentCom />
           </div>

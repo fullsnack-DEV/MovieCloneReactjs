@@ -36,8 +36,8 @@
     cursor: pointer;
 
     @include media("<=phone") {
-      padding: 5px;
-      font-size: 1.2rem;
+      padding: 10px;
+      font-size: 1.1rem;
       width: 100px;
       margin-left: 1rem;
     }

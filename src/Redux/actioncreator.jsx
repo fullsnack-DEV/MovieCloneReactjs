@@ -50,3 +50,14 @@ export const getprice = (price = null) => {
     },
   };
 };
+export const getticket = (date, day, time, price) => {
+  return {
+    type: "GETPRICE",
+    payload: {
+      date: date,
+      day: day,
+      time: time,
+      price: price,
+    },
+  };
+};

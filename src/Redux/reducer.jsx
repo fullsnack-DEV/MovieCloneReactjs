@@ -66,7 +66,7 @@ export const Favreducer = (state = IntialState, action) => {
       ...state,
       price: [
         {
-          price: action.payload.price,
+          price: action.payload.price, //n0 of seats
         },
       ],
     };
