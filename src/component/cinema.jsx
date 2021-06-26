@@ -1,6 +1,8 @@
 import React, { useCallback } from "react";
 import { useState } from "react";
 import { ButtomCom } from "./btncom";
+import { useDispatch } from "react-redux";
+import { getprice } from "../Redux/actioncreator";
 import clsx from "clsx";
 
 export const Cinema = ({ seats, onClick }) => {
@@ -35,6 +37,14 @@ export const Cinema = ({ seats, onClick }) => {
     } else {
       Setselectedseats([...selectedseats, seat]);
     }
+  };
+
+  const dispatch = useDispatch();
+
+  //Dispatch Handler
+  const dispatchseats = (chooseseats) => {
+    dispatch(getprice(chooseseats));
+    onClick();
   };
 
   return (
@@ -84,8 +94,12 @@ export const Cinema = ({ seats, onClick }) => {
             })}
           </div>
         </div>
-        <div style={{ marginLeft: "5rem" }}>
-          <ButtomCom onClick={onClick} />
+
+        <div style={{ marginLeft: "8rem" }}>
+          <h1 style={{ marginTop: "3rem", marginBottom: "-3rem" }}>
+            Seats Booked {selectedseats.length}
+          </h1>
+          <ButtomCom onClick={() => dispatchseats(selectedseats.length)} />
         </div>
       </div>
     </>

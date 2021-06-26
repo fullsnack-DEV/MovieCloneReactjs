@@ -41,3 +41,12 @@ export const gettime = (time = null) => {
     },
   };
 };
+
+export const getprice = (price = null) => {
+  return {
+    type: "GETPRICE",
+    payload: {
+      price: price,
+    },
+  };
+};

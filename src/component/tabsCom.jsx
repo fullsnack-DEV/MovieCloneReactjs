@@ -4,6 +4,7 @@ import { Cinema } from "./cinema";
 import { TabsectionOneCom } from "./tabsectiononeCom";
 
 import { useMedia } from "../Hooks/useMedia";
+import { PaymentCom } from "./PaymentCom";
 export const TabsCom = () => {
   //dates to display on a last Payment Screen
   // const [date, Setdate] = useState({ date: "null", day: "null" });
@@ -75,6 +76,7 @@ export const TabsCom = () => {
             <h2>Tabs Content Three</h2>
 
             {/*paymentcomponent */}
+            <PaymentCom />
           </div>
         </div>
       </div>

@@ -13,6 +13,11 @@ const IntialState = {
       time: null,
     },
   ],
+  price: [
+    {
+      price: null,
+    },
+  ],
 };
 console.log(IntialState);
 
@@ -53,6 +58,15 @@ export const Favreducer = (state = IntialState, action) => {
       time: [
         {
           time: action.payload.time,
+        },
+      ],
+    };
+  } else if (action.type === "GETPRICE") {
+    return {
+      ...state,
+      price: [
+        {
+          price: action.payload.price,
         },
       ],
     };
