@@ -19,7 +19,7 @@ function App() {
       <Provider store={Store}>
         <Router>
           <Switch>
-            <Route component={HomePage} />
+            <Route exact path="/" component={HomePage} />
             <Route path="/detail/:id" component={DetailPage} />
             <Route path="/fav" component={FavPage} />
             <Route path="/recomanded" component={Recommended} />
