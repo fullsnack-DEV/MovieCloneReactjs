@@ -10,25 +10,37 @@ import { Mobtabs } from "./component/Mobtabs";
 import { useMedia } from "./Hooks/UseMedia";
 import { Recommended } from "./Pages/Recommended";
 import { MobTicket } from "./Pages/MobTicket";
+
 function App() {
-  const phone = useMedia("(max-width:500px )");
+  const isphone = useMedia("(max-width:500px )");
 
   return (
-    <>
-      <h1> this is App</h1>
+    <div>
       <Provider store={Store}>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/detail/:id" component={DetailPage} />
-            <Route exact path="/fav" component={FavPage} />
-            <Route exact path="/recomanded" component={Recommended} />
-            <Route exact path="/ticket" component={MobTicket} />
-          </Switch>
-          {phone && <Mobtabs />}
-        </Router>
+        {isphone ? (
+          <Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/detail/:id" component={DetailPage} />
+              <Route exact path="/fav" component={FavPage} />
+              <Route exact path="/recomanded" component={Recommended} />
+              <Route exact path="/ticket" component={MobTicket} />
+            </Switch>
+            <Mobtabs />
+          </Router>
+        ) : (
+          <Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/detail/:id" component={DetailPage} />
+              <Route exact path="/fav" component={FavPage} />
+              <Route exact path="/recomanded" component={Recommended} />
+              <Route exact path="/ticket" component={MobTicket} />
+            </Switch>
+          </Router>
+        )}
       </Provider>
-    </>
+    </div>
   );
 }
 
