@@ -35,7 +35,7 @@ export const TabsectionOneCom = React.memo(({ parentCallback, onClick }) => {
   return (
     <div className="tabsection flex-fc">
       <div className="tabsection__one">
-        <h2 className="tabsection__title">This Month</h2>
+        <h2 className="tabsection__title">This Week</h2>
 
         <Timecom />
 
