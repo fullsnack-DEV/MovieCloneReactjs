@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/MovieCloneReactjs/static/css/main.2f660d12.chunk.css",
+    "main.js": "/MovieCloneReactjs/static/js/main.dd79eedd.chunk.js",
+    "main.js.map": "/MovieCloneReactjs/static/js/main.dd79eedd.chunk.js.map",
+    "runtime-main.js": "/MovieCloneReactjs/static/js/runtime-main.3c973fcf.js",
+    "runtime-main.js.map": "/MovieCloneReactjs/static/js/runtime-main.3c973fcf.js.map",
+    "static/js/2.334bc0c7.chunk.js": "/MovieCloneReactjs/static/js/2.334bc0c7.chunk.js",
+    "static/js/2.334bc0c7.chunk.js.map": "/MovieCloneReactjs/static/js/2.334bc0c7.chunk.js.map",
+    "index.html": "/MovieCloneReactjs/index.html",
+    "static/css/main.2f660d12.chunk.css.map": "/MovieCloneReactjs/static/css/main.2f660d12.chunk.css.map",
+    "static/js/2.334bc0c7.chunk.js.LICENSE.txt": "/MovieCloneReactjs/static/js/2.334bc0c7.chunk.js.LICENSE.txt",
+    "static/media/cancelicon.85b5cefc.png": "/MovieCloneReactjs/static/media/cancelicon.85b5cefc.png",
+    "static/media/imdb.8666d754.png": "/MovieCloneReactjs/static/media/imdb.8666d754.png",
+    "static/media/play-button.a3999e4a.png": "/MovieCloneReactjs/static/media/play-button.a3999e4a.png",
+    "static/media/play.09d17c0f.png": "/MovieCloneReactjs/static/media/play.09d17c0f.png",
+    "static/media/popcorn.c39523cb.png": "/MovieCloneReactjs/static/media/popcorn.c39523cb.png",
+    "static/media/remindertab.4ea70d30.png": "/MovieCloneReactjs/static/media/remindertab.4ea70d30.png",
+    "static/media/ticketbar.7d8f3b86.png": "/MovieCloneReactjs/static/media/ticketbar.7d8f3b86.png",
+    "static/media/tomato.f9497479.png": "/MovieCloneReactjs/static/media/tomato.f9497479.png",
+    "static/media/videoplayertab.8610daba.png": "/MovieCloneReactjs/static/media/videoplayertab.8610daba.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3c973fcf.js",
+    "static/js/2.334bc0c7.chunk.js",
+    "static/css/main.2f660d12.chunk.css",
+    "static/js/main.dd79eedd.chunk.js"
+  ]
+}
