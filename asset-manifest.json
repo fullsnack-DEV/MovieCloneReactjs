@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/fullsnack-DEV.github.io/MovieCloneReactjs/static/css/main.2f660d12.chunk.css",
-    "main.js": "/fullsnack-DEV.github.io/MovieCloneReactjs/static/js/main.7c39c53d.chunk.js",
-    "main.js.map": "/fullsnack-DEV.github.io/MovieCloneReactjs/static/js/main.7c39c53d.chunk.js.map",
+    "main.js": "/fullsnack-DEV.github.io/MovieCloneReactjs/static/js/main.8532e908.chunk.js",
+    "main.js.map": "/fullsnack-DEV.github.io/MovieCloneReactjs/static/js/main.8532e908.chunk.js.map",
     "runtime-main.js": "/fullsnack-DEV.github.io/MovieCloneReactjs/static/js/runtime-main.0aee86bb.js",
     "runtime-main.js.map": "/fullsnack-DEV.github.io/MovieCloneReactjs/static/js/runtime-main.0aee86bb.js.map",
     "static/js/2.f57a6932.chunk.js": "/fullsnack-DEV.github.io/MovieCloneReactjs/static/js/2.f57a6932.chunk.js",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.0aee86bb.js",
     "static/js/2.f57a6932.chunk.js",
     "static/css/main.2f660d12.chunk.css",
-    "static/js/main.7c39c53d.chunk.js"
+    "static/js/main.8532e908.chunk.js"
   ]
 }
