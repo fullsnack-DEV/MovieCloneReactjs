@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/recomanded" component={Recommended} />
             <Route exact path="/ticket" component={MobTicket} />
           </Switch>
-          <Mobtabs />
+          {phone && <Mobtabs />}
         </Router>
       </Provider>
     </>
