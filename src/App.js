@@ -20,10 +20,10 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/detail/:id" component={DetailPage} />
-            <Route path="/fav" component={FavPage} />
-            <Route path="/recomanded" component={Recommended} />
-            <Route path="/ticket" component={MobTicket} />
+            <Route exact path="/detail/:id" component={DetailPage} />
+            <Route exact path="/fav" component={FavPage} />
+            <Route exact path="/recomanded" component={Recommended} />
+            <Route exact path="/ticket" component={MobTicket} />
           </Switch>
         </Router>
       </Provider>
