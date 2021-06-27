@@ -17,27 +17,15 @@ function App() {
   return (
     <div>
       <Provider store={Store}>
-        {isphone ? (
-          <Router>
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/detail/:id" component={DetailPage} />
-              <Route exact path="/fav" component={FavPage} />
-              <Route exact path="/recomanded" component={Recommended} />
-              <Route exact path="/ticket" component={MobTicket} />
-            </Switch>
-          </Router>
-        ) : (
-          <Router>
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/detail/:id" component={DetailPage} />
-              <Route exact path="/fav" component={FavPage} />
-              <Route exact path="/recomanded" component={Recommended} />
-              <Route exact path="/ticket" component={MobTicket} />
-            </Switch>
-          </Router>
-        )}
+        <Router>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/detail/:id" component={DetailPage} />
+            <Route exact path="/fav" component={FavPage} />
+            <Route exact path="/recomanded" component={Recommended} />
+            <Route exact path="/ticket" component={MobTicket} />
+          </Switch>
+        </Router>
       </Provider>
     </div>
   );
