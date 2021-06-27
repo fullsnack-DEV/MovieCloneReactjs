@@ -11,32 +11,34 @@ import { useMedia } from "./Hooks/UseMedia";
 import { Recommended } from "./Pages/Recommended";
 import { MobTicket } from "./Pages/MobTicket";
 function App() {
-  const isphone = useMedia("(max-width:500px )");
+  const phone = useMedia("(max-width:500px )");
 
   return (
     <>
-      <Provider store={Store}>
-        <Router>
-          <Switch>
-            {isphone ? (
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/detail/:id" component={DetailPage} />
-                <Route exact path="/fav" component={FavPage} />
-                <Route exact path="/recomanded" component={Recommended} />
-                <Route exact path="/ticket" component={MobTicket} />
-              </Switch>
-            ) : (
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/detail/:id" component={DetailPage} />
-                <Route exact path="/fav" component={FavPage} />
-              </Switch>
-            )}
-          </Switch>
-          <Mobtabs />
-        </Router>
-      </Provider>
+      {phone ? (
+        <Provider store={Store}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/detail/:id" component={DetailPage} />
+              <Route exact path="/fav" component={FavPage} />
+              <Route exact path="/recomanded" component={Recommended} />
+              <Route exact path="/ticket" component={MobTicket} />
+            </Switch>
+            <Mobtabs />
+          </Router>
+        </Provider>
+      ) : (
+        <Provider store={Store}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/detail/:id" component={DetailPage} />
+              <Route exact path="/fav" component={FavPage} />
+            </Switch>
+          </Router>
+        </Provider>
+      )}
     </>
   );
 }
