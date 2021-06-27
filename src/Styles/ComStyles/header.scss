@@ -56,6 +56,11 @@
       position: absolute;
       right: 70px;
       bottom: 5px;
+      &--mob {
+        right: -3px;
+        bottom: 15px;
+        text-align: center;
+      }
     }
   }
 

@@ -24,7 +24,7 @@ export const HomePage = () => {
   };
 
   return (
-    <div style={{ marginBottom: "8rem" }}>
+    <div className="HomePage">
       {!isphone && (
         <Header
           onClickTv={() => handleRefclickTV()}

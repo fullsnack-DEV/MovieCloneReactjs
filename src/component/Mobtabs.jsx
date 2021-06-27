@@ -4,6 +4,7 @@ import Home from "../Assets/Image/hometab.png";
 import Tickets from "../Assets/Image/ticketbar.png";
 import Movie from "../Assets/Image/videoplayertab.png";
 import Reminder from "../Assets/Image/remindertab.png";
+import { useSelector } from "react-redux";
 import {
   AnimateSharedLayout,
   motion,
@@ -12,6 +13,9 @@ import {
 } from "framer-motion";
 import { useState } from "react";
 export const Mobtabs = () => {
+  //importing Fav data to Show on a tabs
+  const favs = useSelector((state) => state.fav);
+  const favitems = favs.length;
   const history = useHistory();
 
   const routetabhandlers = (name) => {
@@ -62,6 +66,17 @@ export const Mobtabs = () => {
                         routetabhandlers(tab.name);
                       }}
                     />
+
+                    {tab.name === "Reminder" ? (
+                      <span
+                        onClick={() => {
+                          routetabhandlers(tab.name);
+                        }}
+                        className="header__nav-span  header__nav-span--mob"
+                      >
+                        {favitems}
+                      </span>
+                    ) : null}
                   </li>
                 );
               })

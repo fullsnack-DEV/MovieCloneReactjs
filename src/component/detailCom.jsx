@@ -67,12 +67,16 @@ export const DetailCom = ({
           ) : (
             <div className="detail__btncontainer">
               <a className="detail__btn">Book Now</a>
-              <a
-                className="detail__btn"
-                onClick={() => Removedispatchhandler(id)}
-              >
-                {name}
-              </a>
+              {name === "Added..." ? (
+                <a className="detail__btn">{name}</a>
+              ) : (
+                <a
+                  className="detail__btn"
+                  onClick={() => Removedispatchhandler(id)}
+                >
+                  {name}
+                </a>
+              )}
             </div>
           )}
         </div>

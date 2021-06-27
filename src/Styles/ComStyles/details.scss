@@ -156,6 +156,10 @@
     font-size: 1.8rem;
 
     letter-spacing: 0.3rem;
+    outline: none;
+    &:focus {
+      outline: none;
+    }
 
     @include media("<=phone") {
       width: 90%;
