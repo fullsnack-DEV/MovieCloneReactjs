@@ -1,23 +1,46 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Header } from "../component/header";
 import { Banner } from "../component/banner";
 import { MovieCom } from "../component/moviecard";
+import { useMedia } from "../Hooks/useMedia";
 import {
   getmovies,
   getnowplaying,
   getupcoming,
   Ontheair,
 } from "../API/Endpoints";
-import { useRef } from "react";
+
 export const HomePage = () => {
+  const isphone = useMedia("(max-width: 500px)");
+
+  const MoviesRef = useRef();
+  const TVRef = useRef();
+
+  const handleRefclickMovie = () => {
+    MoviesRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleRefclickTV = () => {
+    TVRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div style={{ marginBottom: "8rem" }}>
-      {/* <Header /> */}
+      {!isphone && (
+        <Header
+          onClickTv={() => handleRefclickTV()}
+          onClickMovie={() => handleRefclickMovie()}
+        />
+      )}
       <Banner />
-      <MovieCom endpoint={getmovies} title={"Opening this Week"} istop />
+      <MovieCom
+        refermovie={MoviesRef}
+        endpoint={getmovies}
+        title={"Opening this Week"}
+        istop
+      />
       <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
       <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
-      <MovieCom endpoint={Ontheair} title={"Streaming On Tv"} p />
+      <MovieCom refer={TVRef} endpoint={Ontheair} title={"Streaming On Tv"} p />
     </div>
   );
 };

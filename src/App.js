@@ -11,7 +11,7 @@ import { useMedia } from "./Hooks/useMedia";
 import { Recommended } from "./Pages/Recommended";
 import { MobTicket } from "./Pages/MobTicket";
 function App() {
-  const phone = useMedia("(max-width:400px )");
+  const phone = useMedia("(max-width:500px )");
 
   return (
     <>

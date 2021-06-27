@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import Play from "../Assets/Image/icons.png";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-export const Header = () => {
+export const Header = ({ onClickTv, onClickMovie }) => {
   const favs = useSelector((state) => state.fav);
 
   //Displaying the no of the items
@@ -30,10 +30,10 @@ export const Header = () => {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/">Movies</a>
+              <a onClick={onClickMovie}>Movies</a>
             </li>
             <li>
-              <a href="/">TV Shows</a>
+              <a onClick={onClickTv}>TV Shows</a>
             </li>
             <li>
               {favitems === 0 ? (
@@ -51,7 +51,7 @@ export const Header = () => {
           </ul>
         </nav>
         <div className="header__search">
-          <FaSearch />
+          <FaSearch className="header__search-icon" />
         </div>
       </div>
     </div>

@@ -9,7 +9,15 @@ import animation from "../lottie.json";
 
 //shufflimg the array of the movies so that it don't repeat
 
-export const MovieCom = ({ endpoint, title, istop, p, ispicks }) => {
+export const MovieCom = ({
+  endpoint,
+  title,
+  istop,
+  p,
+  ispicks,
+  refer,
+  refermovie,
+}) => {
   const history = useHistory();
 
   const handler = (id) => {
@@ -63,16 +71,27 @@ export const MovieCom = ({ endpoint, title, istop, p, ispicks }) => {
         <div className="row">
           <div className="row__title flex-ai-c ">
             {istop ? (
-              <img className="row__title__img" src={Playbtn} alt="" />
+              <img
+                ref={refermovie}
+                className="row__title__img"
+                src={Playbtn}
+                alt=""
+              />
             ) : (
               <img className="row__title__img" src={Play} alt="" />
             )}
             <div className="row__textwrapper">
-              <h2>{title}</h2>
+              {title === "Streaming On Tv" ? (
+                <h2>{title}</h2>
+              ) : (
+                <h2>{title}</h2>
+              )}
               {p ? (
                 <p>
                   Grab Your
-                  <span className="row__textwrapper--span1">Subscription</span>
+                  <span ref={refer} className="row__textwrapper--span1">
+                    Subscription
+                  </span>
                   now!
                 </p>
               ) : (

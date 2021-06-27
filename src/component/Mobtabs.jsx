@@ -49,11 +49,11 @@ export const Mobtabs = () => {
     <>
       <AnimatePresence>
         <motion.div className="tabcontainer">
-          <ul>
+          <ul className="tabcontainer__tabs">
             {React.Children.toArray(
               tabsicons.map((tab, index) => {
                 return (
-                  <li>
+                  <li className="tabcontainer__lists">
                     <motion.img
                       src={tab.icon}
                       whileTap={{ translateY: "-20%" }}

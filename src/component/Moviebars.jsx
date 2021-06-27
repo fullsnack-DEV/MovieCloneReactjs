@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import { useMedia } from "../Hooks/useMedia";
 
 export const Moviebars = () => {
-  const isphone = useMedia("(max-width: 400px)");
+  const isphone = useMedia("(max-width: 500px)");
 
   const { data: bars, error, loading, request: loadbars } = useApi(getupcoming);
   const [name, Setname] = useState();

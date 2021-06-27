@@ -63,4 +63,52 @@
     flex-flow: column;
     justify-content: center;
   }
+
+  &__modal {
+    @include media("<=phone") {
+    }
+
+    &__overlay {
+      top: 5rem;
+      left: 35rem;
+      width: 800px;
+      height: 500px;
+      right: 0;
+      bottom: 0;
+      position: fixed;
+      background: rgb(2, 5, 36, 90%);
+
+      cursor: pointer;
+      text-align: center;
+
+      @include media("<=phone") {
+        left: 2rem;
+        width: 300px;
+        height: 500px;
+
+        width: 90%;
+      }
+    }
+
+    &__content {
+      position: fixed;
+      width: 300px;
+      top: 10rem;
+      left: 60rem;
+      @include media("<=phone") {
+        left: 2rem;
+        width: 90%;
+      }
+    }
+    &__close {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+    }
+    &__wrapper {
+      width: 50%;
+    }
+  }
 }
