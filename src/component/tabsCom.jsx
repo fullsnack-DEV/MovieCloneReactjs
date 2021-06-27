@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { Cinema } from "./cinema";
 import { TabsectionOneCom } from "./tabsectiononeCom";
 
-import { useMedia } from "../Hooks/useMedia";
+import { useMedia } from "../Hooks/UseMedia";
 import { PaymentCom } from "./PaymentCom";
 export const TabsCom = () => {
   //dates to display on a last Payment Screen
