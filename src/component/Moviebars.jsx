@@ -5,7 +5,7 @@ import useApi from "../Hooks/useApi";
 import { getupcoming } from "../API/Endpoints";
 import { useHistory } from "react-router-dom";
 
-import { useMedia } from "../Hooks/useMedia";
+import { useMedia } from "../Hooks/UseMedia";
 
 export const Moviebars = () => {
   const isphone = useMedia("(max-width: 500px)");
