@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useApi from "../Hooks/useApi";
+
 import { getupcoming, getnowplaying } from "../API/Endpoints";
 import { MovieCom } from "../component/moviecard";
 

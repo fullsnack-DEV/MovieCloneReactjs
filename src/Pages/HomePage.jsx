@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Header } from "../component/header";
 import { Banner } from "../component/banner";
 import { MovieCom } from "../component/moviecard";
-import { useMedia } from "../Hooks/useMedia";
+import { useMedia } from "../Hooks/UseMedia";
 import {
   getmovies,
   getnowplaying,
@@ -25,22 +25,47 @@ export const HomePage = () => {
 
   return (
     <div className="HomePage">
-      {!isphone && (
-        <Header
-          onClickTv={() => handleRefclickTV()}
-          onClickMovie={() => handleRefclickMovie()}
-        />
+      {isphone ? (
+        <>
+          <Banner />
+          <MovieCom
+            refermovie={MoviesRef}
+            endpoint={getmovies}
+            title={"Opening this Week"}
+            istop
+          />
+          <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
+          <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
+          <MovieCom
+            refer={TVRef}
+            endpoint={Ontheair}
+            title={"Streaming On Tv"}
+            p
+          />
+        </>
+      ) : (
+        <>
+          <Header
+            onClickTv={() => handleRefclickTV()}
+            onClickMovie={() => handleRefclickMovie()}
+          />
+          <Banner />
+          <MovieCom
+            refermovie={MoviesRef}
+            endpoint={getmovies}
+            title={"Opening this Week"}
+            istop
+          />
+          <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
+          <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
+          <MovieCom
+            refer={TVRef}
+            endpoint={Ontheair}
+            title={"Streaming On Tv"}
+            p
+          />
+        </>
       )}
-      <Banner />
-      <MovieCom
-        refermovie={MoviesRef}
-        endpoint={getmovies}
-        title={"Opening this Week"}
-        istop
-      />
-      <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
-      <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
-      <MovieCom refer={TVRef} endpoint={Ontheair} title={"Streaming On Tv"} p />
     </div>
   );
 };
