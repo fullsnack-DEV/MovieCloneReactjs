@@ -15,34 +15,18 @@ function App() {
 
   return (
     <>
-      {phone ? (
-        <>
-          <Provider store={Store}>
-            <Router>
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/detail/:id" component={DetailPage} />
-                <Route exact path="/fav" component={FavPage} />
-                <Route exact path="/recomanded" component={Recommended} />
-                <Route exact path="/ticket" component={MobTicket} />
-              </Switch>
-              <Mobtabs />
-            </Router>
-          </Provider>
-        </>
-      ) : (
-        <>
-          <Provider store={Store}>
-            <Router>
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/detail/:id" component={DetailPage} />
-                <Route exact path="/fav" component={FavPage} />
-              </Switch>
-            </Router>
-          </Provider>
-        </>
-      )}
+      <Provider store={Store}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/detail/:id" component={DetailPage} />
+            <Route exact path="/fav" component={FavPage} />
+            <Route exact path="/recomanded" component={Recommended} />
+            <Route exact path="/ticket" component={MobTicket} />
+          </Switch>
+          <Mobtabs />
+        </Router>
+      </Provider>
     </>
   );
 }
