@@ -24,6 +24,7 @@ function App() {
             <Route path="/fav" component={FavPage} />
             <Route path="/recomanded" component={Recommended} />
             <Route path="/ticket" component={MobTicket} />
+            <Route component={HomePage} />
           </Switch>
         </Router>
       </Provider>
