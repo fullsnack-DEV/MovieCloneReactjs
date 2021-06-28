@@ -18,13 +18,12 @@ function App() {
     <div>
       <Provider store={Store}>
         <Router>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/detail/:id" component={DetailPage} />
-            <Route path="/fav" component={FavPage} />
-            <Route path="/recomanded" component={Recommended} />
-            <Route path="/ticket" component={MobTicket} />
-            <Route component={HomePage} />
+          <Switch path="/">
+            <Route path="/" component={HomePage} />
+            <Route path="/detail/:id" exact component={DetailPage} />
+            <Route path="/fav" exact component={FavPage} />
+            <Route path="/recomanded" exact component={Recommended} />
+            <Route path="/ticket" exact component={MobTicket} />
           </Switch>
         </Router>
       </Provider>
