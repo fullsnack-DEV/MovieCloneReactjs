@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { Header } from "../component/header";
 import { Banner } from "../component/banner";
 import { MovieCom } from "../component/moviecard";
@@ -15,6 +15,8 @@ export const HomePage = () => {
 
   const MoviesRef = useRef();
   const TVRef = useRef();
+
+  //Refrence handlers to Move to Specific part of the screen
 
   const handleRefclickMovie = () => {
     MoviesRef.current.scrollIntoView({ behavior: "smooth" });

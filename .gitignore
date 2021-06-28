@@ -8,7 +8,7 @@
 
 
 #API_KEYS
-.env
+.env*.local
 
 # testing
 /coverage

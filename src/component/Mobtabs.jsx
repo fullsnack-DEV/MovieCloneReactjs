@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Home from "../Assets/Image/hometab.png";
 import Tickets from "../Assets/Image/ticketbar.png";
 import Movie from "../Assets/Image/videoplayertab.png";
@@ -11,7 +11,7 @@ import {
   AnimatePresence,
   animate,
 } from "framer-motion";
-import { useState } from "react";
+
 export const Mobtabs = () => {
   //importing Fav data to Show on a tabs
   const favs = useSelector((state) => state.fav);

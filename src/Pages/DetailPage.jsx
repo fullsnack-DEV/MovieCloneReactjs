@@ -6,21 +6,12 @@ import { getdetail } from "../API/Endpoints";
 import { useParams } from "react-router";
 import { Stats } from "../component/stats";
 import { TabsCom } from "../component/tabsCom";
-import { useDispatch, useSelector } from "react-redux";
-import { Addtofav } from "../Redux/actioncreator";
-import { useLocation } from "react-router-dom";
 
 //code
 export const DetailPage = () => {
   const { id } = useParams();
-  const { pathname } = useLocation();
 
-  const {
-    request: loadmovies,
-    data: movie,
-    error,
-    loading,
-  } = useApi(getdetail, id);
+  const { request: loadmovies, data: movie } = useApi(getdetail, id);
 
   useEffect(() => {
     window.scrollTo(0, 0); //this is to scroll the page at the top while rendering

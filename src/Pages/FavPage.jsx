@@ -23,7 +23,6 @@ export const FavPage = () => {
               ratings={fav.vote_average}
               title={fav.title}
               id={fav.id}
-              ratings={fav.ratings / 2}
               btntitle={"Delete!"}
             />
           );

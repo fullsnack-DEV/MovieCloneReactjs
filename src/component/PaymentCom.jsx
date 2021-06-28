@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { ButtomCom } from "./btncom";
-import { getticket } from "../Redux/actioncreator";
+
 import { TicketCom } from "./TicketCom";
 import Closeicon from "../Assets/Image/cancelicon.png";
+
 export const PaymentCom = () => {
   //State var for Toggle the Model
   const [Modal, setModal] = useState(false);
@@ -12,11 +13,7 @@ export const PaymentCom = () => {
     setModal(!Modal);
   };
 
-  const dispatch = useDispatch();
   //dispatcher
-  const ticketdispatcher = (date, day, time) => {
-    dispatch(getticket(date, day, time));
-  };
 
   //importing  aStore Data for Payments
   const date = useSelector((state) => state.dates);

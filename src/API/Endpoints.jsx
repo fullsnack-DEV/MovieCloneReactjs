@@ -1,7 +1,6 @@
 import Fetchapi from "./ApiClient";
 
 //API keys
-const API_KEYS = process.env.API_KEY;
 
 //creating a endpoints
 

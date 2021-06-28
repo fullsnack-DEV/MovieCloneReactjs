@@ -3,9 +3,9 @@ import useApi from "../Hooks/UseApi";
 
 import Playbtn from "../Assets/Image/play.png";
 import Play from "../Assets/Image/play-button.png";
-import { Link, useHistory } from "react-router-dom";
-import Lottie from "react-lottie";
-import animation from "../lottie.json";
+import { useHistory } from "react-router-dom";
+
+import { LoadingCom } from "./LoadingCom";
 
 //shufflimg the array of the movies so that it don't repeat
 
@@ -24,24 +24,9 @@ export const MovieCom = ({
     history.push(`/detail/${id}`);
   };
 
-  //lottie animation
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animation,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   //using the custom Hook
 
-  const {
-    error,
-    loading,
-    data: movies,
-    request: loadmovies,
-  } = useApi(endpoint);
+  const { loading, data: movies, request: loadmovies } = useApi(endpoint);
 
   //useEffect
   useEffect(() => {
@@ -66,7 +51,7 @@ export const MovieCom = ({
   return (
     <div className="row__container">
       {loading ? (
-        <Lottie options={defaultOptions} height={200} width={200} />
+        <LoadingCom />
       ) : (
         <div className="row">
           <div className="row__title flex-ai-c ">

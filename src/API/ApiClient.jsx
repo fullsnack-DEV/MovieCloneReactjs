@@ -1,4 +1,4 @@
-import { create } from "apisauce";
+import { create } from "axios";
 
 //fetching the data from the IMDB API
 

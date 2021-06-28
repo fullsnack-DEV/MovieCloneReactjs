@@ -1,5 +1,3 @@
-import { ADDTOFAV, REMOVEFROMFAV } from "./actiontypes";
-
 export const Addtofav = (title, img, info, id, ratings) => {
   return {
     type: "ADDTOFAV",

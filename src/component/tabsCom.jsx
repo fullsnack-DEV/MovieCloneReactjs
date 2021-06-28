@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useCallback } from "react";
+
 import { Cinema } from "./cinema";
 import { TabsectionOneCom } from "./tabsectiononeCom";
 

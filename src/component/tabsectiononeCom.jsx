@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { AnimateSharedLayout, motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+
 import { getdates } from "../Redux/actioncreator";
 import { Timecom } from "../component/timecom";
 import { ButtomCom } from "./btncom";

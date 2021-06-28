@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { gettime } from "../Redux/actioncreator";
 import { useDispatch } from "react-redux";
+
 export const Timecom = () => {
   const dispatch = useDispatch();
 

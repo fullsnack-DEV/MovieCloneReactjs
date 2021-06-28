@@ -2,6 +2,7 @@ import React from "react";
 import tomato from "../Assets/Image/tomato.png";
 import popcorn from "../Assets/Image/popcorn.png";
 import IMDB from "../Assets/Image/imdb.png";
+
 export const Stats = ({ votes, time }) => {
   //to convet into the time
   const convert = (n) => {

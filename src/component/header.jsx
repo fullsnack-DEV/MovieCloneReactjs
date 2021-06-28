@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import { FaSearch } from "react-icons/fa";
 import Play from "../Assets/Image/icons.png";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 export const Header = ({ onClickTv, onClickMovie }) => {
   const favs = useSelector((state) => state.fav);
 
