@@ -25,20 +25,47 @@ export const HomePage = () => {
 
   return (
     <>
-      <Header
-        onClickTv={() => handleRefclickTV()}
-        onClickMovie={() => handleRefclickMovie()}
-      />
-      <Banner />
-      <MovieCom
-        refermovie={MoviesRef}
-        endpoint={getmovies}
-        title={"Opening this Weeks"}
-        istop
-      />
-      <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
-      <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
-      <MovieCom refer={TVRef} endpoint={Ontheair} title={"Streaming On Tv"} p />
+      {isphone ? (
+        <>
+          <Banner />
+          <MovieCom
+            refermovie={MoviesRef}
+            endpoint={getmovies}
+            title={"Opening this Weeks"}
+            istop
+          />
+          <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
+          <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
+          <MovieCom
+            refer={TVRef}
+            endpoint={Ontheair}
+            title={"Streaming On Tv"}
+            p
+          />
+        </>
+      ) : (
+        <>
+          <Header
+            onClickTv={() => handleRefclickTV()}
+            onClickMovie={() => handleRefclickMovie()}
+          />
+          <Banner />
+          <MovieCom
+            refermovie={MoviesRef}
+            endpoint={getmovies}
+            title={"Opening this Weeks"}
+            istop
+          />
+          <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
+          <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
+          <MovieCom
+            refer={TVRef}
+            endpoint={Ontheair}
+            title={"Streaming On Tv"}
+            p
+          />
+        </>
+      )}
     </>
   );
 };
