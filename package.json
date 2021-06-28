@@ -2,7 +2,7 @@
   "name": "MovieCloneReactjs",
   "homepage": "https://fullsnack-DEV.github.io/MovieCloneReactjs",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@testing-library/jest-dom": "^5.11.4",
