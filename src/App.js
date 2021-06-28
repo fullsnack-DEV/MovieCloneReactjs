@@ -18,8 +18,8 @@ function App() {
     <div>
       <Provider store={Store}>
         <Router>
-          <Switch path="/">
-            <Route path="/" component={HomePage} />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
             <Route path="/detail/:id" exact component={DetailPage} />
             <Route path="/fav" exact component={FavPage} />
             <Route path="/recomanded" exact component={Recommended} />

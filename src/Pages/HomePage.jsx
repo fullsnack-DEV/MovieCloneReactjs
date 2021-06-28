@@ -24,7 +24,7 @@ export const HomePage = () => {
   };
 
   return (
-    <div className="HomePage">
+    <>
       <Header
         onClickTv={() => handleRefclickTV()}
         onClickMovie={() => handleRefclickMovie()}
@@ -39,7 +39,7 @@ export const HomePage = () => {
       <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
       <MovieCom endpoint={getupcoming} title={"Coming Soon"} />
       <MovieCom refer={TVRef} endpoint={Ontheair} title={"Streaming On Tv"} p />
-    </div>
+    </>
   );
 };
 
