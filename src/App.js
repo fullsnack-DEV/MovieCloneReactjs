@@ -17,8 +17,8 @@ function App() {
   return (
     <div>
       <Provider store={Store}>
-        <Router>
-          <Switch basename="/MovieCloneReactjs">
+        <Router basename="/MovieCloneReactjs">
+          <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/detail/:id" exact component={DetailPage} />
             <Route path="/fav" exact component={FavPage} />
