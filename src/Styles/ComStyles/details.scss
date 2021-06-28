@@ -129,27 +129,41 @@
 
   &__btncontainer {
     margin-top: 40px;
+    display: flex;
 
-    a {
-      text-decoration: none;
-      cursor: pointer;
+    width: 42%;
+    justify-content: space-between;
 
-      &:last-child {
-        margin-left: 20px;
+    @include media("<=tabletlarge") {
+      width: 60%;
 
-        @include media("<=phone") {
-          margin-left: 15px;
-        }
-      }
+      align-items: center;
+      margin-top: 30px;
+      background-color: deepskyblue;
+      justify-content: space-around;
+    }
+
+    @include media("<=tablet") {
+      width: 50%;
+      margin: 0 auto;
+      align-items: center;
+      margin-top: 30px;
+      background-color: deepskyblue;
+      justify-content: space-around;
     }
 
     @include media("<=phone") {
+      width: 100%;
+      margin: 0 auto;
+
       margin-top: 30px;
+      background-color: deepskyblue;
+      justify-content: space-evenly;
     }
   }
 
   &__btn {
-    padding: 15px;
+    padding: 12px;
     background: orangered;
     color: #fff;
     border-radius: 50px;
@@ -162,7 +176,6 @@
     }
 
     @include media("<=phone") {
-      width: 90%;
       font-size: 1.6rem;
       letter-spacing: 0.2rem;
       padding: 12px;
