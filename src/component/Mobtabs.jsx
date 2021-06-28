@@ -5,12 +5,7 @@ import Tickets from "../Assets/Image/ticketbar.png";
 import Movie from "../Assets/Image/videoplayertab.png";
 import Reminder from "../Assets/Image/remindertab.png";
 import { useSelector } from "react-redux";
-import {
-  AnimateSharedLayout,
-  motion,
-  AnimatePresence,
-  animate,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Mobtabs = () => {
   //importing Fav data to Show on a tabs
