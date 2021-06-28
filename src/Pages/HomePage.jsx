@@ -33,7 +33,7 @@ export const HomePage = () => {
       <MovieCom
         refermovie={MoviesRef}
         endpoint={getmovies}
-        title={"Opening this Week"}
+        title={"Opening this Weeks"}
         istop
       />
       <MovieCom endpoint={getnowplaying} title={"Now in Theaters"} />
