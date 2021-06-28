@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MovieCloneReactjs/static/css/main.2f660d12.chunk.css",
-    "main.js": "/MovieCloneReactjs/static/js/main.a906b347.chunk.js",
-    "main.js.map": "/MovieCloneReactjs/static/js/main.a906b347.chunk.js.map",
+    "main.js": "/MovieCloneReactjs/static/js/main.94c7c956.chunk.js",
+    "main.js.map": "/MovieCloneReactjs/static/js/main.94c7c956.chunk.js.map",
     "runtime-main.js": "/MovieCloneReactjs/static/js/runtime-main.bdd07ec7.js",
     "runtime-main.js.map": "/MovieCloneReactjs/static/js/runtime-main.bdd07ec7.js.map",
     "static/js/2.f57a6932.chunk.js": "/MovieCloneReactjs/static/js/2.f57a6932.chunk.js",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.bdd07ec7.js",
     "static/js/2.f57a6932.chunk.js",
     "static/css/main.2f660d12.chunk.css",
-    "static/js/main.a906b347.chunk.js"
+    "static/js/main.94c7c956.chunk.js"
   ]
 }
