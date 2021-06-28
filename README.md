@@ -15,6 +15,12 @@ To deploy this project run
   yarn run deploy
 ```
 
+## Working Video on Mobile Screen
+
+
+https://user-images.githubusercontent.com/56273302/123670954-613ddd80-d85b-11eb-865b-cead25a612b9.mp4
+
+
 ## ScreenShots
 ![Screenshot 1](https://user-images.githubusercontent.com/56273302/123667444-c8f22980-d857-11eb-871a-bca4bdd5f48b.jpg)
 
