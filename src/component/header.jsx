@@ -23,7 +23,9 @@ export const Header = ({ onClickTv, onClickMovie }) => {
         <nav className="header__nav">
           <ul className="header__nav__list flex-ai-c">
             <li>
-              <a href="/">Home</a>
+              <Link to="/">
+                <a href="/">Home</a>
+              </Link>
             </li>
             <li>
               <span className="click-span" onClick={onClickMovie}>
