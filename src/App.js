@@ -1,6 +1,11 @@
 import "./App.scss";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  HashRouter,
+} from "react-router-dom";
 import { HomePage } from "./Pages/HomePage";
 import { DetailPage } from "./Pages/DetailPage";
 import { Provider } from "react-redux";
@@ -18,13 +23,13 @@ function App() {
     <div>
       <Provider store={Store}>
         <Router basename="/MovieCloneReactjs">
-          <Switch>
+          <HashRouter>
             <Route exact path="/" component={HomePage} />
             <Route path="/detail/:id" exact component={DetailPage} />
             <Route path="/fav" exact component={FavPage} />
             <Route path="/recomanded" exact component={Recommended} />
             <Route path="/ticket" exact component={MobTicket} />
-          </Switch>
+          </HashRouter>
           {isphone && <Mobtabs />}
         </Router>
       </Provider>
