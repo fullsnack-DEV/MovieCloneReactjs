@@ -26,14 +26,14 @@ export const Header = ({ onClickTv, onClickMovie }) => {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/" onClick={onClickMovie}>
+              <span className="click-span" onClick={onClickMovie}>
                 Movies
-              </a>
+              </span>
             </li>
             <li>
-              <a href="/" onClick={onClickTv}>
+              <span className="click-span" onClick={onClickTv}>
                 TV Shows
-              </a>
+              </span>
             </li>
             <li>
               {favitems === 0 ? (

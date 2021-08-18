@@ -71,4 +71,14 @@
       display: none;
     }
   }
+
+  .click-span {
+    text-decoration: none;
+    margin-right: 5em;
+    font-size: 1.8rem;
+    color: $white;
+    font-family: "Nunito";
+    letter-spacing: 0.2em;
+    position: relative;
+  }
 }
