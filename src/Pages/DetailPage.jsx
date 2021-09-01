@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { CinemaScreen } from "../component/CinemaScreen";
 import { DetailCom } from "../component/detailCom";
 import useApi from "../Hooks/UseApi";
@@ -9,6 +9,8 @@ import { TabsCom } from "../component/tabsCom";
 
 //code
 export const DetailPage = () => {
+  const BookRef = useRef();
+
   const { id } = useParams();
 
   const { request: loadmovies, data: movie } = useApi(getdetail, id);
@@ -17,6 +19,11 @@ export const DetailPage = () => {
     window.scrollTo(0, 0); //this is to scroll the page at the top while rendering
     loadmovies();
   }, [loadmovies]);
+
+  //Scroll to Book Sec
+  const handleScrooltobook = () => {
+    BookRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   //getting the Movie Backdrop
 
@@ -29,9 +36,10 @@ export const DetailPage = () => {
         title={movie.title}
         id={movie.id}
         btntitle={"Remind Later"}
+        Onclickref={() => handleScrooltobook()}
       />
       <Stats votes={movie.vote_average} time={movie.runtime} />
-      <TabsCom />
+      <TabsCom refBook={BookRef} />
       <CinemaScreen />
     </div>
   );

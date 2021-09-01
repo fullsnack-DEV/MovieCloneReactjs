@@ -12,6 +12,7 @@ export const DetailCom = ({
   title,
   id,
   btntitle,
+  Onclickref,
 }) => {
   const [name, Setname] = useState(btntitle);
 
@@ -54,7 +55,9 @@ export const DetailCom = ({
 
           {name === "Remind Later" ? (
             <div className="detail__btncontainer">
-              <div className="detail__btn">Book Now</div>
+              <div className="detail__btn" onClick={Onclickref}>
+                Book Now
+              </div>
               <div
                 className="detail__btn"
                 onClick={() =>
@@ -66,7 +69,9 @@ export const DetailCom = ({
             </div>
           ) : (
             <div className="detail__btncontainer">
-              <div className="detail__btn">Book Now</div>
+              <div className="detail__btn" onClick={Onclickref}>
+                Book Now
+              </div>
               {name === "Added..." ? (
                 <div className="detail__btn">{name}</div>
               ) : (

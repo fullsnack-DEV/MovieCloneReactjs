@@ -163,12 +163,12 @@
   }
 
   &__btn {
-    padding: 12px;
+    padding: 15px;
     background: orangered;
     color: #fff;
     border-radius: 50px;
-    font-size: 1.8rem;
-
+    font-size: 1.5rem;
+    cursor: pointer;
     letter-spacing: 0.3rem;
     outline: none;
     &:focus {

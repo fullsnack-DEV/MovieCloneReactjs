@@ -5,7 +5,7 @@ import { TabsectionOneCom } from "./tabsectiononeCom";
 
 import { useMedia } from "../Hooks/UseMedia";
 import { PaymentCom } from "./PaymentCom";
-export const TabsCom = () => {
+export const TabsCom = ({ refBook }) => {
   //dates to display on a last Payment Screen
   // const [date, Setdate] = useState({ date: "null", day: "null" });
 
@@ -27,7 +27,7 @@ export const TabsCom = () => {
   const seats = istablet ? [...Array(54).keys()] : [...Array(120).keys()];
 
   return (
-    <div className="tabs">
+    <div ref={refBook} className="tabs">
       <div className="tabs__container center flex-fc ">
         <div className="tabs__block  flex-ai-c">
           <div

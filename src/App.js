@@ -23,13 +23,13 @@ function App() {
     <div>
       <Provider store={Store}>
         <Router basename="/MovieCloneReactjs">
-          <HashRouter>
+          <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/detail/:id" exact component={DetailPage} />
             <Route path="/fav" exact component={FavPage} />
             <Route path="/recomanded" exact component={Recommended} />
             <Route path="/ticket" exact component={MobTicket} />
-          </HashRouter>
+          </Switch>
           {isphone && <Mobtabs />}
         </Router>
       </Provider>
